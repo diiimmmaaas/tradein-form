@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TradeIn-form</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="form">
+            <form action="#" id="form" class="form__body">
+                <h1 class="form__title">Рассчитать цену устройства</h1>
+                <div class="form__item">
+                    <label for="formName" class="form__label">Как Вас зовут? *</label>
+                    <input id="formName" type="text" name="name" class="form__input">
+                </div>
+                <div class="form__item">
+                    <label for="formEmail" class="form__label">Email *</label>
+                    <input id="formEmail" type="text" name="email" class="form__input">
+                </div>
+                <div class="form__item">
+                    <label for="formPhoneNumber" class="form__label">Ваш телефон *</label>
+                    <input id="formPhoneNumber" type="text" name="phoneNumber" class="form__input">
+                </div>
+                <div class="form__item">
+                    <div class="form__title">Выберите тип устройства *</div>
+                    <select id="select_devices">
+                        <option value="notSelected">(не установлено)</option>
+                    </select>
+                </div>
+                <div class="form__item">
+                    <div class="form__title">Выберите модель устройства *</div>
+                    <select id="select_model">
+                        <option value="notSelected">(не установлено)</option>
+                    </select>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="devicesList.js"></script>
+    <script src="iphoneList.js"></script>
+</body>
+</html>
