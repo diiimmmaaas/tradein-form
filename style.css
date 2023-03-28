@@ -91,6 +91,85 @@ input {
     margin-bottom: 12px;
 }
 
+.form__buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.form_bigButton {
+    width: 100%;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    margin: 10px 0px;
+    background: #F3F3F3;
+    cursor: pointer;
+}
+
+
+.form_bigButton:hover {
+    -webkit-box-shadow: 6px 5px 15px 8px rgba(21, 23, 24, 0.2);
+    -moz-box-shadow: 6px 5px 15px 8px rgba(21, 23, 24, 0.2);
+    box-shadow: 6px 5px 15px 8px rgba(21, 23, 24, 0.2);
+}
+
+.form_bigButton:active {
+}
+
+.form_bigButton__text {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 24px;
+    background: #F3F3F3;
+}
+
+.form_bigButton__description {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    background: #F3F3F3;
+}
+
+.form__button {
+    padding: 8px 16px;
+    background: #F3F3F3;
+    border-radius: 8px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    text-align: center;
+    color: #000000;
+    margin: 10px 0px;
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+
+.form__button:hover {
+    -webkit-box-shadow: 6px 5px 15px 8px rgba(21, 23, 24, 0.2);
+    -moz-box-shadow: 6px 5px 15px 8px rgba(21, 23, 24, 0.2);
+    box-shadow: 6px 5px 15px 8px rgba(21, 23, 24, 0.2);
+}
+
+.form__button:active {
+    color: #fff;
+    background-color: #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .form__input {
     background: #F3F3F3;
     border-radius: 8px;
