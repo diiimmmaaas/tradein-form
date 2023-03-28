@@ -27,33 +27,50 @@ for (const key in index) {
 const selectDevice = document.getElementById('select_devices');
 
 selectDevice.addEventListener('change', () => {
-  let currentValue = selectDevice.options[selectDevice.selectedIndex].text;
+    let currentValue = selectDevice.options[selectDevice.selectedIndex].text;
 
-  const selectPhoneContainer = document.getElementById('selectPhoneModelBlock');
-  const selectNotebookContainer = document.getElementById('selectNotebookModel');
+    const selectPhoneContainer = document.getElementById('selectPhoneModelBlock');
+    const selectNotebookContainer = document.getElementById('selectNotebookModel');
+    const formNamePhoneEmailContainer = document.getElementById('nameEmailPhoneContainer');
+    const selectDeviceConfigContainer = document.getElementById('selectDeviceConfigContainer');
 
-  selectPhoneContainer.classList.add('noDisplay');
-  selectPhoneContainer.classList.remove('form__item');
+    selectPhoneContainer.classList.add('noDisplay');
+    selectPhoneContainer.classList.remove('form__item');
 
-  selectNotebookContainer.classList.remove('form__item');
-  selectNotebookContainer.classList.add('noDisplay');
-  switch (currentValue) {
+    selectNotebookContainer.classList.remove('form__item');
+    selectNotebookContainer.classList.add('noDisplay');
+    switch (currentValue) {
+      case '(не установлено)':
+        formNamePhoneEmailContainer.classList.add('noDisplay');
+        selectDeviceConfigContainer.classList.add('noDisplay');
+        break
       case 'Ноутбуки':
         console.log('выбран ноут')
         selectNotebookContainer.classList.remove('noDisplay');
         selectNotebookContainer.classList.add('form__item');
+        selectDeviceConfigContainer.classList.add('noDisplay');
+        formNamePhoneEmailContainer.classList.remove('noDisplay');
         break
       case 'Смарт часы':
         console.log('выбраны часы')
+        formNamePhoneEmailContainer.classList.remove('noDisplay');
+        selectDeviceConfigContainer.classList.remove('noDisplay');
+
         break
       case 'Планшеты':
+        formNamePhoneEmailContainer.classList.remove('noDisplay');
+        selectDeviceConfigContainer.classList.remove('noDisplay');
+
         console.log('выбраны планшеты')
         break
       case 'Смартфоны':
+        formNamePhoneEmailContainer.classList.remove('noDisplay');
         console.log('выбраны смартфоны')
         selectPhoneContainer.classList.remove('noDisplay');
         selectPhoneContainer.classList.add('form__item');
+        selectDeviceConfigContainer.classList.remove('noDisplay');
         break
+
     }
   }
 )
