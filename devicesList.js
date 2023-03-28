@@ -16,10 +16,17 @@ for (const key in devicesList) {
 const selectDevice = document.getElementById('select_devices');
 
 selectDevice.addEventListener('change', () => {
-    let currentValue = selectDevice.options[selectDevice.selectedIndex].text;
-    switch (currentValue) {
+  let currentValue = selectDevice.options[selectDevice.selectedIndex].text;
+
+  const selectPhoneContainer = document.getElementById('selectPhoneModelBlock');
+  const selectNotebookContainer = document.getElementById('selectNotebookModel');
+
+  selectPhoneContainer.classList.add('noDisplay');
+  selectNotebookContainer.classList.add('noDisplay');
+  switch (currentValue) {
       case 'Ноутбуки':
         console.log('выбран ноут')
+        selectNotebookContainer.classList.remove('noDisplay');
         break
       case 'Смарт часы':
         console.log('выбраны часы')
@@ -29,6 +36,7 @@ selectDevice.addEventListener('change', () => {
         break
       case 'Смартфоны':
         console.log('выбраны смартфоны')
+        selectPhoneContainer.classList.remove('noDisplay');
         break
     }
   }
