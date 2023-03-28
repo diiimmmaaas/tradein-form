@@ -61,6 +61,7 @@ selectDevice.addEventListener('change', () => {
         formNamePhoneEmailContainer.classList.remove('noDisplay');
         selectDeviceConfigContainer.classList.remove('noDisplay');
         selectPhoneContainer.classList.remove('noDisplay');
+        selectPhoneContainer.classList.add('form__item');
 
         console.log('выбраны планшеты')
         break
