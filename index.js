@@ -11,16 +11,16 @@ window.addEventListener('load', () => {
 
 const parent = document.getElementById("select_devices");
 
-const devicesList = {
+const index = {
   1: {value: 'Ноутбуки'},
   2: {value: 'Смарт часы'},
   3: {value: 'Планшеты'},
   4: {value: 'Смартфоны'},
 }
-for (const key in devicesList) {
+for (const key in index) {
   const option = document.createElement("option");
   option.classList.add("select_devices__option");
-  option.innerText = `${devicesList[key].value}`;
+  option.innerText = `${index[key].value}`;
   parent.appendChild(option);
 }
 
