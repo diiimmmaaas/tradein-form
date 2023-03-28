@@ -6,6 +6,9 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>TradeIn-form</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap');
+    </style>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -26,14 +29,15 @@
                     <input id="formPhoneNumber" type="text" name="phoneNumber" class="form__input">
                 </div>
                 <div class="form__item">
-                    <div class="form__title">Выберите тип устройства *</div>
-                    <select id="select_devices">
+                    <label for="select_devices" class="form__label">Выберите тип устройства *</label>
+                    <select id="select_devices" onchange="onChangeSelectDevice()"
+                            class="form_select">
                         <option value="notSelected">(не установлено)</option>
                     </select>
                 </div>
                 <div class="form__item noDisplay" id="selectPhoneModelBlock">
-                    <div class="form__title">Выберите модель устройства *</div>
-                    <select id="select_model">
+                    <label for="select_model" class="form__label">Выберите модель устройства *</label>
+                    <select id="select_model" class="form_select">
                         <option value="notSelected">(не установлено)</option>
                     </select>
                 </div>
