@@ -147,18 +147,4 @@ const iphones = {
       3: {memory: 256, count: ""},
     },
   },
-
-
-  // 6: {value: "iPhone 13 Pro Max", count: ""},
-  // 7: {value: "iPhone 13 Pro", count: ""},
-  // 8: {value: "iPhone 13", count: ""},
-  // 9: {value: "iPhone 13 mini", count: ""},
-  // 10: {value: "iPhone 12 Pro Max", count: ""},
-  // 11: {value: "iPhone 12 Pro", count: ""},
-  // 12: {value: "iPhone 12", count: ""},
-  // 13: {value: "iPhone 12 mini", count: ""},
-  // 14: {value: "iPhone 11 Pro Max", count: ""},
-  // 15: {value: "iPhone 11 Pro", count: ""},
-  // 16: {value: "iPhone 11", count: ""},
-  // 17: {value: "iPhone XR", count: ""},
 };

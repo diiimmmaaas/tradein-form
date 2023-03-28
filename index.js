@@ -1,78 +1,102 @@
 window.addEventListener('load', () => {
-  const selectPhoneContainer = document.getElementById('selectPhoneModelBlock');
-  const selectNotebookContainer = document.getElementById('selectNotebookModel');
+  const form = document.getElementById('form')
+  form.addEventListener('submit', formSend)
 
-  selectPhoneContainer.classList.add('noDisplay');
-  selectPhoneContainer.classList.remove('form__item');
+  async function formSend(e){
+    e.preventDefault()
 
-  selectNotebookContainer.classList.remove('form__item');
-  selectNotebookContainer.classList.add('noDisplay');
+    let formData =  new FormData(form)
+    for(var pair of formData.entries()) {
+      console.log(pair[0]+ ', '+ pair[1]);
+    }
+  }
 })
 
-const parent = document.getElementById("select_devices");
+const contentBlock = document.getElementById('content');
+const selectDeviceConfigContainer = document.getElementById('selectDeviceConfigContainer');
+const selectDevices = document.getElementById('select_devices');
+const selectDeveloperSmartphones = document.getElementById('selectSmartphonesContainer');
+const selectPhoneModelBlock = document.getElementById('selectPhoneModelBlock');
+const selectPhoneModel = document.getElementById('select_model');
+const selectSmartphones = document.getElementById('select_smartphones');
+const selectWatches = document.getElementById('select_watches');
+const selectNotebook = document.getElementById('select_notebook');
+const nameBlock = document.getElementById('name_block');
 
-const index = {
-  1: {value: 'Ноутбуки'},
-  2: {value: 'Смарт часы'},
-  3: {value: 'Планшеты'},
-  4: {value: 'Смартфоны'},
+function removeAllChildNodes(parent) {
+  while (parent.firstChild) {
+    parent.removeChild(parent.firstChild);
+  }
 }
-for (const key in index) {
-  const option = document.createElement("option");
-  option.classList.add("select_devices__option");
-  option.innerText = `${index[key].value}`;
-  parent.appendChild(option);
+
+function createNotebookForm(){
+  selectNotebook.classList.remove('noDisplay')
+  nameBlock.classList.remove('noDisplay')
 }
 
-const selectDevice = document.getElementById('select_devices');
+function createSmartphonesForm(){
+  selectDeviceConfigContainer.classList.remove('noDisplay')
+  nameBlock.classList.remove('noDisplay')
+}
 
-selectDevice.addEventListener('change', () => {
-    let currentValue = selectDevice.options[selectDevice.selectedIndex].text;
+function createSmartphoneSelect(object){
+  selectPhoneModelBlock.classList.remove('noDisplay')
+  removeAllChildNodes(selectPhoneModel)
+  for (const key in object) {
+    const option = document.createElement("option");
+    option.classList.add("select_devices__option");
+    option.innerText = `${object[key].value}`;
+    selectPhoneModel.appendChild(option);
+  }
+  createSmartphonesForm()
+}
 
-    const selectPhoneContainer = document.getElementById('selectPhoneModelBlock');
-    const selectNotebookContainer = document.getElementById('selectNotebookModel');
-    const formNamePhoneEmailContainer = document.getElementById('nameEmailPhoneContainer');
-    const selectDeviceConfigContainer = document.getElementById('selectDeviceConfigContainer');
+selectSmartphones.addEventListener('change', () => {
+  let currentValue = selectSmartphones.options[selectSmartphones.selectedIndex].text;
 
-    selectPhoneContainer.classList.add('noDisplay');
-    selectPhoneContainer.classList.remove('form__item');
+  switch (currentValue) {
+    case '(не установлено)':
+      selectPhoneModelBlock.classList.add('noDisplay')
+      selectDeviceConfigContainer.classList.add('noDisplay')
+      nameBlock.classList.add('noDisplay')
+      break
+    case 'Apple':
+      createSmartphoneSelect(iphones)
+      break
+    case 'Samsung':
+      createSmartphoneSelect(samsungPhones)
+      break
+    case 'Xiaomi':
 
-    selectNotebookContainer.classList.remove('form__item');
-    selectNotebookContainer.classList.add('noDisplay');
+      break
+    case 'Huawei':
+
+      break
+  }
+})
+
+selectDevices.addEventListener('change', () => {
+    let currentValue = selectDevices.options[selectDevices.selectedIndex].text;
+
     switch (currentValue) {
       case '(не установлено)':
-        formNamePhoneEmailContainer.classList.add('noDisplay');
-        selectDeviceConfigContainer.classList.add('noDisplay');
+        contentBlock.classList.add('noDisplay')
         break
       case 'Ноутбуки':
-        console.log('выбран ноут')
-        selectNotebookContainer.classList.remove('noDisplay');
-        selectNotebookContainer.classList.add('form__item');
-        selectDeviceConfigContainer.classList.add('noDisplay');
-        formNamePhoneEmailContainer.classList.remove('noDisplay');
+        contentBlock.classList.remove('noDisplay')
+        selectNotebook.classList.remove('noDisplay')
+        selectDeveloperSmartphones.classList.add('noDisplay')
         break
       case 'Смарт часы':
-        console.log('выбраны часы')
-        formNamePhoneEmailContainer.classList.remove('noDisplay');
-        selectDeviceConfigContainer.classList.remove('noDisplay');
-
+        contentBlock.classList.remove('noDisplay')
         break
       case 'Планшеты':
-        formNamePhoneEmailContainer.classList.remove('noDisplay');
-        selectDeviceConfigContainer.classList.remove('noDisplay');
-        selectPhoneContainer.classList.remove('noDisplay');
-        selectPhoneContainer.classList.add('form__item');
-
-        console.log('выбраны планшеты')
+        contentBlock.classList.remove('noDisplay')
         break
       case 'Смартфоны':
-        formNamePhoneEmailContainer.classList.remove('noDisplay');
-        console.log('выбраны смартфоны')
-        selectPhoneContainer.classList.remove('noDisplay');
-        selectPhoneContainer.classList.add('form__item');
-        selectDeviceConfigContainer.classList.remove('noDisplay');
+        contentBlock.classList.remove('noDisplay')
+        selectDeveloperSmartphones.classList.remove('noDisplay')
         break
-
     }
   }
 )

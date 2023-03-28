@@ -57,11 +57,8 @@ input {
 
 .form {
     margin-top: 50px;
+    margin-bottom: 50px;
     width: 60%;
-}
-
-.noDisplay {
-    display: none;
 }
 
 .form__title {
@@ -97,6 +94,10 @@ input {
     gap: 10px;
 }
 
+.form__radio {
+    display: none;
+}
+
 .form_bigButton {
     width: 100%;
     padding: 8px 16px;
@@ -109,6 +110,8 @@ input {
     margin: 10px 0px;
     background: #F3F3F3;
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
 }
 
 
@@ -119,6 +122,15 @@ input {
 }
 
 .form_bigButton:active {
+    color: #fff;
+    background-color: #000;
+    justify-content: space-between;
+}
+
+.form__radio:checked + .form_bigButton {
+    color: #fff;
+    background-color: #000;
+    justify-content: space-between;
 }
 
 .form_bigButton__text {
@@ -127,7 +139,6 @@ input {
     font-weight: 600;
     font-size: 14px;
     line-height: 24px;
-    background: #F3F3F3;
 }
 
 .form_bigButton__description {
@@ -136,7 +147,10 @@ input {
     font-weight: 500;
     font-size: 14px;
     line-height: 24px;
-    background: #F3F3F3;
+}
+
+.form__checkbox {
+    display: none;
 }
 
 .form__button {
@@ -170,6 +184,17 @@ input {
     align-items: center;
 }
 
+.form__checkbox:checked + .form__button,
+.form__radio:checked + .form__button {
+    color: #fff;
+    background-color: #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
 .form__input {
     background: #F3F3F3;
     border-radius: 8px;
@@ -187,4 +212,38 @@ input {
     background: #fafafa;
     border: 1px solid #eeeeee;
     cursor: pointer;
+}
+
+.checkbox {
+    margin: 20px 0 20px 0;
+}
+
+.checkbox__label span {
+    font-size: 13px;
+    color: #999;
+}
+
+.checkbox__label span a {
+    color: #000000;
+}
+
+.form__submit {
+    background: #06070D;
+    box-shadow: 0px 4px 32px rgba(7, 8, 14, 0.1);
+    border-radius: 12px;
+    width: 100%;
+    padding-top: 19px;
+    padding-bottom: 19px;
+    color: #fff;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.noDisplay {
+    display: none;
 }
