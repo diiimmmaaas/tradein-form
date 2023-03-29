@@ -12,24 +12,24 @@ window.addEventListener('load', () => {
   // }
 
 
-  const contentBlock = document.getElementById('content');
-  const nameBlock = document.getElementById('name_block');
-  const selectWatchContainer = document.getElementById('selectWatchContainer');
-  const selectSmartphonesContainer = document.getElementById('selectSmartphonesContainer');
-  const selectPhoneModelBlock = document.getElementById('selectPhoneModelBlock');
-  const selectNotebookDeveloperContainer = document.getElementById('selectNotebookDeveloperContainer');
-  const selectNotebookContainer = document.getElementById('selectNotebookContainer');
-  const selectDeviceConfigContainer = document.getElementById('selectDeviceConfigContainer');
+  const contentBlock = document.querySelector('.content');
+  const nameBlock = document.querySelector('.name_block');
+  const selectWatchContainer = document.querySelector('.selectWatchContainer');
+  const selectSmartphonesContainer = document.querySelector('.selectSmartphonesContainer');
+  const selectPhoneModelBlock = document.querySelector('.selectPhoneModelBlock');
+  const selectNotebookDeveloperContainer = document.querySelector('.selectNotebookDeveloperContainer');
+  const selectNotebookContainer = document.querySelector('.selectNotebookContainer');
+  const selectDeviceConfigContainer = document.querySelector('.selectDeviceConfigContainer');
 
 
 
-  const selectDevices = document.getElementById('select_devices');
-  const selectPhoneModel = document.getElementById('select_model');
-  const selectSmartphones = document.getElementById('select_smartphones');
-  const selectWatches = document.getElementById('select_watches');
-  const selectNotebookDeveloperModel = document.getElementById('select_notebookDeveloperModel');
-  const selectMacbookVersionDiv = document.getElementById('selectMacbookVersion');
-  const selectMacbookVersion = document.getElementById('select_MacbookVersion');
+  const selectDevices = document.querySelector('.select_devices');
+  const selectPhoneModel = document.querySelector('.select_model');
+  const selectSmartphones = document.querySelector('.select_smartphones');
+  const selectWatches = document.querySelector('.select_watches');
+  const selectNotebookDeveloperModel = document.querySelector('.select_notebookDeveloperModel');
+  const selectMacbookVersionDiv = document.querySelector('.selectMacbookVersion');
+  const selectMacbookVersion = document.querySelector('.select_MacbookVersion');
 
   function changeMacbookModel() {
     let userChooseMacbookModel = selectNotebookDeveloperModel.options[selectNotebookDeveloperModel.selectedIndex].text;
@@ -39,14 +39,14 @@ window.addEventListener('load', () => {
     } else if (userChooseMacbookModel === 'Другой производитель') {
       selectMacbookVersionDiv.classList.add('noDisplay');
       selectNotebookContainer.classList.remove('noDisplay');
-      document.getElementById('selectMacbookYear').classList.add('noDisplay'); //добавление ноудисплей у года ноута
+      document.querySelector('.selectMacbookYear').classList.add('noDisplay'); //добавление ноудисплей у года ноута
     }
   }
 
   function changeMacbookVersion() {
     let userChooseMacbookVersion = selectMacbookVersion.options[selectMacbookVersion.selectedIndex].text;
 
-    let macBookYearBlock = document.getElementById('selectMacbookYear');
+    let macBookYearBlock = document.querySelector('.selectMacbookYear');
     if (userChooseMacbookVersion !== '(не установлено)') {
       macBookYearBlock.classList.remove('noDisplay')
     } else if (userChooseMacbookVersion === '(не установлено)') {
@@ -80,10 +80,10 @@ window.addEventListener('load', () => {
         let currentValue = selectDevices.options[selectDevices.selectedIndex].text;
 
         // все формы
-        let formNotebook = document.getElementById('form_notebook');
-        let formWatch = document.getElementById('');
-        let formLaptop = document.getElementById('');
-        let formSmartphone = document.getElementById('');
+        let formNotebook = document.querySelector('.form_notebook');
+        // let formWatch = document.querySelector('');
+        // let formLaptop = document.querySelector('');
+        // let formSmartphone = document.querySelector('');
 
         switch (currentValue) {
           case '(не установлено)':
@@ -159,12 +159,14 @@ window.addEventListener('load', () => {
 
 const values = [16, 32, 64, 128, 256, 512, 1000];
 
-const inputMemory = document.getElementById('inputMemory'),
-  outputMemory = document.getElementById('outputMemory');
+const inputMemory = document.querySelector('.inputMemory'),
+  outputMemory = document.querySelector('.outputMemory');
+
+console.log(outputMemory)
+console.log(inputMemory)
 
 inputMemory.oninput = function() {
   // outputMemory.innerHTML = values[this.value];
-  console.log(outputMemory.innerHTML)
   if (values[this.value] < 1000) {
     outputMemory.innerHTML = values[this.value] + ' GB';
   } else {
