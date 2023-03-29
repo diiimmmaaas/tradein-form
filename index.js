@@ -96,7 +96,7 @@ window.addEventListener('load', () => {
         createSmartphoneSelect(iphones)
         break
       case 'Samsung':
-        createSmartphoneSelect(samsungPhones)
+        createSmartphoneSelect(samsung_phones)
         break
       case 'Xiaomi':
 
