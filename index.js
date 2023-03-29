@@ -30,6 +30,7 @@ window.addEventListener('load', () => {
   const selectNotebookDeveloperModel = document.querySelector('.select_notebookDeveloperModel');
   const selectMacbookVersionDiv = document.querySelector('.selectMacbookVersion');
   const selectMacbookVersion = document.querySelector('.select_MacbookVersion');
+  const selectWatchDeveloperModel = document.querySelector('.select_watchDeveloperModel');
 
   function changeMacbookModel() {
     let userChooseMacbookModel = selectNotebookDeveloperModel.options[selectNotebookDeveloperModel.selectedIndex].text;
@@ -54,9 +55,24 @@ window.addEventListener('load', () => {
     }
   }
 
+  let selectAppleWatchVersion = document.querySelector('.selectAppleWatchVersion');
+  let selectSamsungWatchVersion = document.querySelector('.selectSamsungWatchVersion');
+
+  function changeWatchModel() {
+    let userChooseWatchVersion = selectWatchDeveloperModel.options[selectWatchDeveloperModel.selectedIndex].text;
+    if (userChooseWatchVersion === 'Apple') {
+      selectAppleWatchVersion.classList.remove('noDisplay');
+      selectSamsungWatchVersion.classList.add('noDisplay');
+    } else {
+      selectAppleWatchVersion.classList.add('noDisplay');
+      selectSamsungWatchVersion.classList.remove('noDisplay');
+    }
+  }
+
   selectNotebookDeveloperModel.addEventListener("change", changeMacbookModel)
   selectMacbookVersion.addEventListener("change", changeMacbookVersion)
 
+  selectWatchDeveloperModel.addEventListener('change', changeWatchModel);
 
 
   selectDevices.addEventListener('change', () => {
