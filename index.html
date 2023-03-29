@@ -477,7 +477,171 @@
 
 
 
-        <form action="#" id="form_watch" class="form_body noDisplay">
+        <form action="#" class="form_body noDisplay form_watch">
+
+            <div class="form__item selectWatchDeveloperContainer">
+                <label class="form__label">Ваш производитель
+                    часов *</label>
+                <select name="WatchDeveloper"
+                        class="form_select select_watchDeveloperModel">
+                    <option value="notSelected">(не установлено)</option>
+                    <option value="Apple">Apple</option>
+                    <option value="Samsung">Samsung</option>
+                </select>
+            </div>
+
+            <div class="form__item noDisplay selectAppleWatchVersion">
+                <label class="form__label">Ваша модель
+                    часов *</label>
+                <select name="AppleWatchVersion"
+                        class="form_select select_AppleWatchVersion">
+                    <option value="notSelected">(не установлено)</option>
+                    <option value="MacbookPro13">Macbook Pro 13</option>
+                </select>
+            </div>
+
+            <div class="form__item noDisplay selectSamsungWatchVersion">
+                <label class="form__label">Ваша модель
+                    часов *</label>
+                <select name="SamsungWatchVersion"
+                        class="form_select select_SamsungWatchVersion">
+                    <option value="notSelected">(не установлено)</option>
+                    <option value="MacbookPro13">Samsung Pro 13</option>
+                </select>
+            </div>
+
+            <div class="selectDeviceConfigContainer">
+
+                <div class="form__item">
+                    <h2 class="form__label">Состояние</h2>
+                    <div class="form__buttons">
+                        <input value="excellent" name="state" class="form__radio excellent"
+                               type="radio">
+                        <label class="form_bigButton">
+                            <span class="form_bigButton__text">Отличное</span>
+                            <span class="form_bigButton__description">Отличное состояние</span>
+                        </label>
+                        <input value="good" name="state" class="form__radio good"
+                               type="radio">
+                        <label class="form_bigButton">
+                            <span class="form_bigButton__text">Хорошее</span>
+                            <span class="form_bigButton__description">Мелкие царапины и
+                                потертости</span>
+                        </label>
+                        <input value="average" name="state" class="form__radio average"
+                               type="radio">
+                        <label class="form_bigButton">
+                            <span class="form_bigButton__text">Среднее</span>
+                            <span class="form_bigButton__description">Царапины, потертости и мелкие вмятины</span>
+                        </label>
+                        <input value="bad" name="state" class="form__radio bad"
+                               type="radio">
+                        <label class="form_bigButton">
+                            <span class="form_bigButton__text">Плохое</span>
+                            <span class="form_bigButton__description">Глубокие царапины, потертости и сколы</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="form__item">
+                    <h2 class="form__label">Гарантия</h2>
+                    <div class="form__buttons">
+                        <input value="yes" name="warranty" class="form__radio warranty"
+                               type="radio">
+                        <label class="form__button">
+                            Да
+                        </label>
+                        <input value="no" name="warranty" class="form__radio no_warranty"
+                               type="radio">
+                        <label class="form__button">
+                            Нет
+                        </label>
+                    </div>
+                </div>
+                <div class="form__item">
+                    <h2 class="form__label">Комплектация</h2>
+                    <div class="form__buttons">
+                        <input name="box" class="form__checkbox formBox"
+                               type="checkbox">
+                        <label class="form__button">Коробка</label>
+                        <input name="cable" class="form__checkbox formCable"
+                               type="checkbox">
+                        <label class="form__button">Кабель</label>
+                    </div>
+                </div>
+                <div class="form__item">
+                    <h2 class="form__label">Цвет</h2>
+                    <div class="form__buttons">
+                        <input value="white" name="color" class="form__radio white"
+                               type="radio">
+                        <label class="form__button">
+                            Белый
+                        </label>
+                        <input value="black" name="color" class="form__radio black"
+                               type="radio">
+                        <label class="form__button">
+                            Черный
+                        </label>
+                        <input value="gold" name="color" class="form__radio gold"
+                               type="radio">
+                        <label class="form__button">
+                            Золотой
+                        </label>
+                        <input value="grey" name="color" class="form__radio grey"
+                               type="radio">
+                        <label class="form__button">
+                            Серый
+                        </label>
+                        <input value="green" name="color" class="form__radio green"
+                               type="radio">
+                        <label class="form__button">
+                            Зеленый
+                        </label>
+                        <input value="blue" name="color" class="form__radio blue"
+                               type="radio">
+                        <label class="form__button">
+                            Голубой
+                        </label>
+                        <input value="red" name="color" class="form__radio red"
+                               type="radio">
+                        <label class="form__button">
+                            Красный
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="name_block">
+                <div class="form__item">
+                    <label class="form__label">Как Вас зовут? *</label>
+                    <input type="text" name="name" class="form__input formName">
+                </div>
+                <div class="form__item">
+                    <label class="form__label formEmail">Email *</label>
+                    <input type="text" name="email"
+                           class="form__input">
+                </div>
+                <div class="form__item">
+                    <label class="form__label">Ваш телефон
+                        *</label>
+                    <input type="text" name="phoneNumber"
+                           class="form__input formPhoneNumber">
+                </div>
+                <div class="form__item">
+                    <div class="checkbox">
+                        <input type="checkbox"
+                               name="agreement"
+                               class="checkbox__input formAgreement">
+                        <label class="checkbox__label">
+                                            <span>Я согласен на обработку
+                                            <a href="#">персональных данных</a>
+                                            </span>
+                        </label>
+                    </div>
+                    <button type="submit" class="form__submit">Получить результат
+                    </button>
+                </div>
+            </div>
+
         </form>
         <form action="#" id="form_tablet" class="form_body noDisplay"></form>
         <form action="#" id="form_smartphone" class="form_body noDisplay"></form>
