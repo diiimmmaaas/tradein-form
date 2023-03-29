@@ -81,7 +81,7 @@ window.addEventListener('load', () => {
         // все формы
         let formNotebook = document.querySelector('.form_notebook');
         let formWatch = document.querySelector('.form_watch');
-        // let formLaptop = document.querySelector('');
+        let formLaptop = document.querySelector('.form_tablet');
         // let formSmartphone = document.querySelector('');
 
         switch (currentValue) {
