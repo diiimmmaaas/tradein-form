@@ -1,15 +1,15 @@
 window.addEventListener('load', () => {
-  const form = document.getElementById('form')
-  form.addEventListener('submit', formSend)
-
-  async function formSend(e){
-    e.preventDefault()
-
-    let formData =  new FormData(form)
-    for(var pair of formData.entries()) {
-      console.log(pair[0]+ ', '+ pair[1]);
-    }
-  }
+  // const form = document.getElementById('form')
+  // form.addEventListener('submit', formSend)
+  //
+  // async function formSend(e){
+  //   e.preventDefault()
+  //
+  //   let formData =  new FormData(form)
+  //   for(var pair of formData.entries()) {
+  //     console.log(pair[0]+ ', '+ pair[1]);
+  //   }
+  // }
 
 
   const contentBlock = document.getElementById('content');
@@ -28,6 +28,34 @@ window.addEventListener('load', () => {
   const selectSmartphones = document.getElementById('select_smartphones');
   const selectWatches = document.getElementById('select_watches');
   const selectNotebookDeveloperModel = document.getElementById('select_notebookDeveloperModel');
+  const selectMacbookVersionDiv = document.getElementById('selectMacbookVersion');
+  const selectMacbookVersion = document.getElementById('select_MacbookVersion');
+
+  function changeMacbookModel() {
+    let userChooseMacbookModel = selectNotebookDeveloperModel.options[selectNotebookDeveloperModel.selectedIndex].text;
+    if (userChooseMacbookModel === 'Apple') {
+      selectMacbookVersionDiv.classList.remove('noDisplay');
+      selectNotebookContainer.classList.add('noDisplay');
+    } else if (userChooseMacbookModel === 'Другой производитель') {
+      selectMacbookVersionDiv.classList.add('noDisplay');
+      selectNotebookContainer.classList.remove('noDisplay');
+      document.getElementById('selectMacbookYear').classList.add('noDisplay'); //добавление ноудисплей у года ноута
+    }
+  }
+
+  function changeMacbookVersion() {
+    let userChooseMacbookVersion = selectMacbookVersion.options[selectMacbookVersion.selectedIndex].text;
+
+    let macBookYearBlock = document.getElementById('selectMacbookYear');
+    if (userChooseMacbookVersion !== '(не установлено)') {
+      macBookYearBlock.classList.remove('noDisplay')
+    } else if (userChooseMacbookVersion === '(не установлено)') {
+      macBookYearBlock.classList.add('noDisplay');
+    }
+  }
+
+  selectNotebookDeveloperModel.addEventListener("change", changeMacbookModel)
+  selectMacbookVersion.addEventListener("change", changeMacbookVersion)
 
   function removeAllChildNodes(parent) {
     while (parent.firstChild) {
@@ -51,16 +79,18 @@ window.addEventListener('load', () => {
   selectDevices.addEventListener('change', () => {
         let currentValue = selectDevices.options[selectDevices.selectedIndex].text;
 
+        // все формы
+        let formNotebook = document.getElementById('form_notebook');
+        let formWatch = document.getElementById('');
+        let formLaptop = document.getElementById('');
+        let formSmartphone = document.getElementById('');
+
         switch (currentValue) {
           case '(не установлено)':
-            contentBlock.classList.add('noDisplay')
+            formNotebook.classList.add('noDisplay');
             break
           case 'Ноутбуки':
-            contentBlock.classList.remove('noDisplay')
-            selectWatchContainer.classList.add('noDisplay')
-            selectSmartphonesContainer.classList.add('noDisplay')
-            selectPhoneModelBlock.classList.add('noDisplay')
-            selectNotebookDeveloperContainer.classList.remove('noDisplay')
+            formNotebook.classList.remove('noDisplay');
             break
           case 'Смарт часы':
             contentBlock.classList.remove('noDisplay')
@@ -83,48 +113,44 @@ window.addEventListener('load', () => {
       }
   )
 
-  selectSmartphones.addEventListener('change', () => {
-    let currentValue = selectSmartphones.options[selectSmartphones.selectedIndex].text;
-
-    switch (currentValue) {
-      case '(не установлено)':
-        selectPhoneModelBlock.classList.add('noDisplay')
-        selectDeviceConfigContainer.classList.add('noDisplay')
-        nameBlock.classList.add('noDisplay')
-        break
-      case 'Apple':
-        createSmartphoneSelect(iphones)
-        break
-      case 'Samsung':
-        createSmartphoneSelect(samsungPhones)
-        break
-      case 'Xiaomi':
-
-        break
-      case 'Huawei':
-
-        break
-      case 'OnePlus':
-
-        break
-    }
-  })
-
-  selectNotebookDeveloperModel.addEventListener('change', () => {
-    let currentValue = selectNotebookDeveloperModel.options[selectNotebookDeveloperModel.selectedIndex].text;
-
-    switch (currentValue) {
-      case '(не установлено)':
-        break
-      case 'Apple':
-        break
-      case 'Другой производитель':
-        selectNotebookContainer.classList.remove('noDisplay')
-        break
-    }
-  })
+//   selectSmartphones.addEventListener('change', () => {
+//     let currentValue = selectSmartphones.options[selectSmartphones.selectedIndex].text;
+//
+//     switch (currentValue) {
+//       case '(не установлено)':
+//         selectPhoneModelBlock.classList.add('noDisplay')
+//         selectDeviceConfigContainer.classList.add('noDisplay')
+//         nameBlock.classList.add('noDisplay')
+//         break
+//       case 'Apple':
+//         createSmartphoneSelect(iphones)
+//         break
+//       case 'Samsung':
+//         createSmartphoneSelect(samsungPhones)
+//         break
+//       case 'Xiaomi':
+//
+//         break
+//       case 'Huawei':
+//
+//         break
+//       case 'OnePlus':
+//
+//         break
+//     }
+//   })
+//
+//   selectNotebookDeveloperModel.addEventListener('change', () => {
+//     let currentValue = selectNotebookDeveloperModel.options[selectNotebookDeveloperModel.selectedIndex].text;
+//
+//     switch (currentValue) {
+//       case '(не установлено)':
+//         break
+//       case 'Apple':
+//         break
+//       case 'Другой производитель':
+//         selectNotebookContainer.classList.remove('noDisplay')
+//         break
+//     }
+//   })
 })
-
-
-
-
