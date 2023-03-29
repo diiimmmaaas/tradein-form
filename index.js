@@ -154,3 +154,23 @@ window.addEventListener('load', () => {
 //     }
 //   })
 })
+
+const values = [16, 32, 64, 128, 256, 512, 1000];
+
+const inputMemory = document.getElementById('inputMemory'),
+  outputMemory = document.getElementById('outputMemory');
+
+inputMemory.oninput = function() {
+  // outputMemory.innerHTML = values[this.value];
+  console.log(outputMemory.innerHTML)
+  if (values[this.value] < 1000) {
+    console.log('if block')
+    outputMemory.innerHTML = values[this.value] + ' GB';
+  } else {
+    console.log('else block')
+    outputMemory.innerHTML = 1 + ' TB'
+  }
+};
+
+// set the default value
+inputMemory.oninput();
