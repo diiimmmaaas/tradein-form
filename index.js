@@ -17,6 +17,7 @@ window.addEventListener('load', () => {
   const selectWatchContainer = document.getElementById('selectWatchContainer');
   const selectSmartphonesContainer = document.getElementById('selectSmartphonesContainer');
   const selectPhoneModelBlock = document.getElementById('selectPhoneModelBlock');
+  const selectNotebookDeveloperContainer = document.getElementById('selectNotebookDeveloperContainer');
   const selectNotebookContainer = document.getElementById('selectNotebookContainer');
   const selectDeviceConfigContainer = document.getElementById('selectDeviceConfigContainer');
 
@@ -26,7 +27,7 @@ window.addEventListener('load', () => {
   const selectPhoneModel = document.getElementById('select_model');
   const selectSmartphones = document.getElementById('select_smartphones');
   const selectWatches = document.getElementById('select_watches');
-  const selectNotebookModel = document.getElementById('select_notebookModel');
+  const selectNotebookDeveloperModel = document.getElementById('select_notebookDeveloperModel');
 
   function removeAllChildNodes(parent) {
     while (parent.firstChild) {
@@ -59,14 +60,14 @@ window.addEventListener('load', () => {
             selectWatchContainer.classList.add('noDisplay')
             selectSmartphonesContainer.classList.add('noDisplay')
             selectPhoneModelBlock.classList.add('noDisplay')
-            selectNotebookContainer.classList.remove('noDisplay')
+            selectNotebookDeveloperContainer.classList.remove('noDisplay')
             break
           case 'Смарт часы':
             contentBlock.classList.remove('noDisplay')
             selectWatchContainer.classList.remove('noDisplay')
             selectSmartphonesContainer.classList.add('noDisplay')
             selectPhoneModelBlock.classList.add('noDisplay')
-            selectNotebookContainer.classList.add('noDisplay')
+            selectNotebookDeveloperContainer.classList.add('noDisplay')
             break
           case 'Планшеты':
             contentBlock.classList.remove('noDisplay')
@@ -76,7 +77,7 @@ window.addEventListener('load', () => {
             selectWatchContainer.classList.add('noDisplay')
             selectSmartphonesContainer.classList.remove('noDisplay')
             selectPhoneModelBlock.classList.add('noDisplay')
-            selectNotebookContainer.classList.add('noDisplay')
+            selectNotebookDeveloperContainer.classList.add('noDisplay')
             break
         }
       }
@@ -109,8 +110,8 @@ window.addEventListener('load', () => {
     }
   })
 
-  selectNotebookModel.addEventListener('change', () => {
-    let currentValue = selectNotebookModel.options[selectNotebookModel.selectedIndex].text;
+  selectNotebookDeveloperModel.addEventListener('change', () => {
+    let currentValue = selectNotebookDeveloperModel.options[selectNotebookDeveloperModel.selectedIndex].text;
 
     switch (currentValue) {
       case '(не установлено)':
@@ -118,6 +119,7 @@ window.addEventListener('load', () => {
       case 'Apple':
         break
       case 'Другой производитель':
+        selectNotebookContainer.classList.remove('noDisplay')
         break
     }
   })

@@ -14,244 +14,257 @@
 <body>
 <div class="wrapper">
     <div class="form">
-        <form action="#" id="form" class="form__body">
-            <h1 class="form__title">Рассчитать цену устройства</h1>
+<!--        <form action="#" id="form" class="form__body">-->
+<!--            <h1 class="form__title">Рассчитать цену устройства</h1>-->
 
-            <!--БЛОК ДЛЯ ВЫБОРА УСТРОЙСТВА!!!-->
-            <div class="form__item">
-                <label for="select_devices" class="form__label">Выберите тип устройства
-                    *</label>
-                <select name="device" id="select_devices"
-                        class="form_select">
-                    <option value="notSelected">(не установлено)</option>
-                    <option value="notebook">Ноутбуки</option>
-                    <option value="watch">Смарт часы</option>
-                    <option value="tablet">Планшеты</option>
-                    <option value="smartphones">Смартфоны</option>
-                </select>
-            </div>
+<!--            &lt;!&ndash;БЛОК ДЛЯ ВЫБОРА УСТРОЙСТВА!!!&ndash;&gt;-->
+<!--            <div class="form__item">-->
+<!--                <label for="select_devices" class="form__label">Выберите тип устройства-->
+<!--                    *</label>-->
+<!--                <select name="device" id="select_devices"-->
+<!--                        class="form_select">-->
+<!--                    <option value="notSelected">(не установлено)</option>-->
+<!--                    <option value="notebook">Ноутбуки</option>-->
+<!--                    <option value="watch">Смарт часы</option>-->
+<!--                    <option value="tablet">Планшеты</option>-->
+<!--                    <option value="smartphones">Смартфоны</option>-->
+<!--                </select>-->
+<!--            </div>-->
 
-            <div class="content" id="content">
-                <!--БЛОК ДЛЯ ВЫБОРА ПРОИЗВОДИТЕЛЯ ЧАСОВ!!!-->
-                <div class="form__item noDisplay" id="selectWatchContainer">
-                    <label for="select_watches" class="form__label">Выберите производителя
-                        Ваших часов
-                        *</label>
-                    <select name="watchModel" id="select_watches"
-                            class="form_select">
-                        <option value="notSelected">(не установлено)</option>
-                        <option value="Apple">Apple</option>
-                        <option value="Samsung">Samsung</option>
-                    </select>
-                </div>
+<!--            <div class="content" id="content">-->
+<!--                &lt;!&ndash;БЛОК ДЛЯ ВЫБОРА ПРОИЗВОДИТЕЛЯ ЧАСОВ!!!&ndash;&gt;-->
+<!--                <div class="form__item noDisplay" id="selectWatchContainer">-->
+<!--                    <label for="select_watches" class="form__label">Выберите производителя-->
+<!--                        Ваших часов-->
+<!--                        *</label>-->
+<!--                    <select name="watchModel" id="select_watches"-->
+<!--                            class="form_select">-->
+<!--                        <option value="notSelected">(не установлено)</option>-->
+<!--                        <option value="Apple">Apple</option>-->
+<!--                        <option value="Samsung">Samsung</option>-->
+<!--                    </select>-->
+<!--                </div>-->
 
-                <!--БЛОК ДЛЯ ВЫБОРА ПРОИЗВОДИТЕЛЯ СМАРТФОНА!!!-->
-                <div class="form__item noDisplay" id="selectSmartphonesContainer">
-                    <label for="select_smartphones" class="form__label">Выберите
-                        производителя Вашего смартфона
-                        *</label>
-                    <select name="smartphoneDeveloper" id="select_smartphones"
-                            class="form_select">
-                        <option value="notSelected">(не установлено)</option>
-                        <option value="Apple">Apple</option>
-                        <option value="Samsung">Samsung</option>
-                        <option value="Xiaomi">Xiaomi</option>
-                        <option value="Huawei">Huawei</option>
-                        <option value="OnePlus">OnePlus</option>
-                        <option value="other">Другое...</option>
-                    </select>
-                </div>
+<!--                &lt;!&ndash;БЛОК ДЛЯ ВЫБОРА ПРОИЗВОДИТЕЛЯ СМАРТФОНА!!!&ndash;&gt;-->
+<!--                <div class="form__item noDisplay" id="selectSmartphonesContainer">-->
+<!--                    <label for="select_smartphones" class="form__label">Выберите-->
+<!--                        производителя Вашего смартфона-->
+<!--                        *</label>-->
+<!--                    <select name="smartphoneDeveloper" id="select_smartphones"-->
+<!--                            class="form_select">-->
+<!--                        <option value="notSelected">(не установлено)</option>-->
+<!--                        <option value="Apple">Apple</option>-->
+<!--                        <option value="Samsung">Samsung</option>-->
+<!--                        <option value="Xiaomi">Xiaomi</option>-->
+<!--                        <option value="Huawei">Huawei</option>-->
+<!--                        <option value="OnePlus">OnePlus</option>-->
+<!--                        <option value="other">Другое...</option>-->
+<!--                    </select>-->
+<!--                </div>-->
 
-                <!--БЛОК ДЛЯ ВЫБОРА МОДЕЛИ СМАРТФОНА!!!-->
-                <div class="form__item noDisplay" id="selectPhoneModelBlock">
-                    <label for="select_model" class="form__label">Выберите модель
-                        смартфона *</label>
-                    <select name="smartphone" id="select_model" class="form_select">
-                        <option value="notSelected">(не установлено)</option>
-                    </select>
-                </div>
+<!--                &lt;!&ndash;БЛОК ДЛЯ ВЫБОРА МОДЕЛИ СМАРТФОНА!!!&ndash;&gt;-->
+<!--                <div class="form__item noDisplay" id="selectPhoneModelBlock">-->
+<!--                    <label for="select_model" class="form__label">Выберите модель-->
+<!--                        смартфона *</label>-->
+<!--                    <select name="smartphone" id="select_model" class="form_select">-->
+<!--                        <option value="notSelected">(не установлено)</option>-->
+<!--                    </select>-->
+<!--                </div>-->
 
-                <!--БЛОК ДЛЯ ВЫБОРА МОДЕЛИ НОУТБУКА!!!-->
-                <div class="form__item noDisplay" id="selectNotebookContainer">
-                    <label for="select_notebookModel" class="form__label">Ваша модель
-                        ноутбука *</label>
-                    <select name="notebookDeveloper" id="select_notebookModel"
-                            class="form_select">
-                        <option value="notSelected">(не установлено)</option>
-                        <option value="Apple">Apple</option>
-                        <option value="other">Другой производитель</option>
-                    </select>
-                </div>
+<!--                &lt;!&ndash;БЛОК ДЛЯ ВЫБОРА ПРОИЗВОДИТЕЛЯ НОУТБУКА!!!&ndash;&gt;-->
+<!--                <div class="form__item noDisplay" id="selectNotebookDeveloperContainer">-->
+<!--                    <label for="select_notebookModel" class="form__label">Ваша модель-->
+<!--                        ноутбука *</label>-->
+<!--                    <select name="notebookDeveloper" id="select_notebookDeveloperModel"-->
+<!--                            class="form_select">-->
+<!--                        <option value="notSelected">(не установлено)</option>-->
+<!--                        <option value="Apple">Apple</option>-->
+<!--                        <option value="other">Другой производитель</option>-->
+<!--                    </select>-->
+<!--                </div>-->
 
-                <!--БЛОК ДЛЯ ЗАПОЛНЕНИЯ ДАННЫХ ОБ СОСТОЯНИИ УСТРОЙСТВА!!!-->
-                <div id="selectDeviceConfigContainer" class="noDisplay">
-                    <div class="form__item">
-                        <h2 class="form__label">Объем памяти</h2>
-                        <div class="form__buttons">
-                            <input value="64gb" name="memory" class="form__radio"
-                                   id="64gb"
-                                   type="radio">
-                            <label class="form__button" for="64gb">
-                                64 Гб
-                            </label>
-                            <input value="128gb" name="memory" class="form__radio" id="128gb"
-                                   type="radio">
-                            <label class="form__button" for="128gb">
-                                128 Гб
-                            </label>
-                            <input value="256gb" name="memory" class="form__radio" id="256gb"
-                                   type="radio">
-                            <label class="form__button" for="256gb">
-                                256 Гб
-                            </label>
-                            <input value="512gb" name="memory" class="form__radio" id="512gb"
-                                   type="radio">
-                            <label class="form__button" for="512gb">
-                                512 Гб
-                            </label>
-                            <input value="1tb" name="memory" class="form__radio" id="1tb"
-                                   type="radio">
-                            <label class="form__button" for="1tb">
-                                1 Тб
-                            </label>
-                        </div>
-                    </div>
-                    <div class="form__item">
-                        <h2 class="form__label">Состояние</h2>
-                        <div class="form__buttons">
-                            <input value="excellent" name="state" class="form__radio" id="excellent"
-                                   type="radio">
-                            <label class="form_bigButton" for="excellent">
-                                <span class="form_bigButton__text">Отличное</span>
-                                <span class="form_bigButton__description">Отличное состояние</span>
-                            </label>
-                            <input value="good" name="state" class="form__radio" id="good"
-                                   type="radio">
-                            <label class="form_bigButton" for="good">
-                                <span class="form_bigButton__text">Хорошее</span>
-                                <span class="form_bigButton__description">Мелкие царапины и
-                                потертости</span>
-                            </label>
-                            <input value="average" name="state" class="form__radio" id="average"
-                                   type="radio">
-                            <label class="form_bigButton" for="average">
-                                <span class="form_bigButton__text">Среднее</span>
-                                <span class="form_bigButton__description">Царапины, потертости и мелкие вмятины</span>
-                            </label>
-                            <input value="bad" name="state" class="form__radio" id="bad"
-                                   type="radio">
-                            <label class="form_bigButton" for="bad">
-                                <span class="form_bigButton__text">Плохое</span>
-                                <span class="form_bigButton__description">Глубокие царапины, потертости и сколы</span>
-                            </label>
-                        </div>
-                    </div>
-                    <div class="form__item">
-                        <h2 class="form__label">Гарантия</h2>
-                        <div class="form__buttons">
-                            <input value="no" name="warranty" class="form__radio"
-                                   id="no_warranty"
-                                   type="radio">
-                            <label class="form__button" for="no_warranty">
-                                Нет
-                            </label>
-                            <input value="yes" name="warranty" class="form__radio"
-                                   id="warranty"
-                                   type="radio">
-                            <label class="form__button" for="warranty">
-                                Да
-                            </label>
-                        </div>
-                    </div>
-                    <div class="form__item">
-                        <h2 class="form__label">Комплектация</h2>
-                        <div class="form__buttons">
-                            <input name="box" class="form__checkbox" id="formBox"
-                                   type="checkbox">
-                            <label class="form__button" for="formBox">Коробка</label>
-                            <input name="cable" class="form__checkbox" id="formCable"
-                                   type="checkbox">
-                            <label class="form__button" for="formCable">Кабель</label>
-                        </div>
-                    </div>
-                    <div class="form__item">
-                        <h2 class="form__label">Цвет</h2>
-                        <div class="form__buttons">
-                            <input value="white" name="color" class="form__radio" id="white"
-                                   type="radio">
-                            <label class="form__button" for="white">
-                                Белый
-                            </label>
-                            <input value="black" name="color" class="form__radio"
-                                    id="black"
-                                   type="radio">
-                            <label class="form__button" for="black">
-                                Черный
-                            </label>
-                            <input value="gold" name="color" class="form__radio" id="gold"
-                                   type="radio">
-                            <label class="form__button" for="gold">
-                                Золотой
-                            </label>
-                            <input value="grey" name="color" class="form__radio" id="grey"
-                                   type="radio">
-                            <label class="form__button" for="grey">
-                                Серый
-                            </label>
-                            <input value="green" name="color" class="form__radio"
-                                   id="green"
-                                   type="radio">
-                            <label class="form__button" for="green">
-                                Зеленый
-                            </label>
-                            <input value="blue" name="color" class="form__radio" id="blue"
-                                   type="radio">
-                            <label class="form__button" for="blue">
-                                Голубой
-                            </label>
-                            <input value="red" name="color" class="form__radio" id="red"
-                                   type="radio">
-                            <label class="form__button" for="red">
-                                Красный
-                            </label>
-                        </div>
-                    </div>
-                </div>
+<!--                &lt;!&ndash;БЛОК ДЛЯ ВЫБОРА МОДЕЛИ НОУТБУКА НЕ APPLE!!!&ndash;&gt;-->
+<!--                <div class="form__item noDisplay" id="selectNotebookContainer">-->
+<!--                    <label for="select_notebookModel" class="form__label">Введите-->
+<!--                        название Вашего ноутбука</label>-->
+<!--                    <input class="form__input" type="text" name="notebookModel" id="select_notebookModel">-->
+<!--                </div>-->
 
-                <!--УНИВЕРСАЛЬНЫЙ БЛОК C ИМЕНЕМ И ЛИЧНЫМИ ДАННЫМИ ПОЛЬЗОВАТЕЛЯ!!!-->
-                <div class="noDisplay" id="name_block">
-                    <div class="form__item">
-                        <label for="formName" class="form__label">Как Вас зовут? *</label>
-                        <input id="formName" type="text" name="name" class="form__input">
-                    </div>
-                    <div class="form__item">
-                        <label for="formEmail" class="form__label">Email *</label>
-                        <input id="formEmail" type="text" name="email"
-                               class="form__input">
-                    </div>
-                    <div class="form__item">
-                        <label for="formPhoneNumber" class="form__label">Ваш телефон
-                            *</label>
-                        <input id="formPhoneNumber" type="text" name="phoneNumber"
-                               class="form__input">
-                    </div>
-                    <div class="form__item">
-                        <div class="checkbox">
-                            <input id="formAgreement" checked type="checkbox"
-                                   name="agreement"
-                                   class="checkbox__input">
-                            <label class="checkbox__label" for="formAgreement">
-                            <span>Я согласен на обработку
-                            <a href="#">персональных данных</a>
-                            </span>
-                            </label>
-                        </div>
-                        <button type="submit" class="form__submit">Получить результат
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </form>
+
+<!--                &lt;!&ndash;БЛОК ДЛЯ ЗАПОЛНЕНИЯ ДАННЫХ ОБ СОСТОЯНИИ УСТРОЙСТВА!!!&ndash;&gt;-->
+<!--                <div id="selectDeviceConfigContainer" class="noDisplay">-->
+<!--                    <div class="form__item">-->
+<!--                        <h2 class="form__label">Объем памяти</h2>-->
+<!--                        <div class="form__buttons">-->
+<!--                            <input value="64gb" name="memory" class="form__radio"-->
+<!--                                   id="64gb"-->
+<!--                                   type="radio">-->
+<!--                            <label class="form__button" for="64gb">-->
+<!--                                64 Гб-->
+<!--                            </label>-->
+<!--                            <input value="128gb" name="memory" class="form__radio" id="128gb"-->
+<!--                                   type="radio">-->
+<!--                            <label class="form__button" for="128gb">-->
+<!--                                128 Гб-->
+<!--                            </label>-->
+<!--                            <input value="256gb" name="memory" class="form__radio" id="256gb"-->
+<!--                                   type="radio">-->
+<!--                            <label class="form__button" for="256gb">-->
+<!--                                256 Гб-->
+<!--                            </label>-->
+<!--                            <input value="512gb" name="memory" class="form__radio" id="512gb"-->
+<!--                                   type="radio">-->
+<!--                            <label class="form__button" for="512gb">-->
+<!--                                512 Гб-->
+<!--                            </label>-->
+<!--                            <input value="1tb" name="memory" class="form__radio" id="1tb"-->
+<!--                                   type="radio">-->
+<!--                            <label class="form__button" for="1tb">-->
+<!--                                1 Тб-->
+<!--                            </label>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="form__item">-->
+<!--                        <h2 class="form__label">Состояние</h2>-->
+<!--                        <div class="form__buttons">-->
+<!--                            <input value="excellent" name="state" class="form__radio" id="excellent"-->
+<!--                                   type="radio">-->
+<!--                            <label class="form_bigButton" for="excellent">-->
+<!--                                <span class="form_bigButton__text">Отличное</span>-->
+<!--                                <span class="form_bigButton__description">Отличное состояние</span>-->
+<!--                            </label>-->
+<!--                            <input value="good" name="state" class="form__radio" id="good"-->
+<!--                                   type="radio">-->
+<!--                            <label class="form_bigButton" for="good">-->
+<!--                                <span class="form_bigButton__text">Хорошее</span>-->
+<!--                                <span class="form_bigButton__description">Мелкие царапины и-->
+<!--                                потертости</span>-->
+<!--                            </label>-->
+<!--                            <input value="average" name="state" class="form__radio" id="average"-->
+<!--                                   type="radio">-->
+<!--                            <label class="form_bigButton" for="average">-->
+<!--                                <span class="form_bigButton__text">Среднее</span>-->
+<!--                                <span class="form_bigButton__description">Царапины, потертости и мелкие вмятины</span>-->
+<!--                            </label>-->
+<!--                            <input value="bad" name="state" class="form__radio" id="bad"-->
+<!--                                   type="radio">-->
+<!--                            <label class="form_bigButton" for="bad">-->
+<!--                                <span class="form_bigButton__text">Плохое</span>-->
+<!--                                <span class="form_bigButton__description">Глубокие царапины, потертости и сколы</span>-->
+<!--                            </label>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="form__item">-->
+<!--                        <h2 class="form__label">Гарантия</h2>-->
+<!--                        <div class="form__buttons">-->
+<!--                            <input value="no" name="warranty" class="form__radio"-->
+<!--                                   id="no_warranty"-->
+<!--                                   type="radio">-->
+<!--                            <label class="form__button" for="no_warranty">-->
+<!--                                Нет-->
+<!--                            </label>-->
+<!--                            <input value="yes" name="warranty" class="form__radio"-->
+<!--                                   id="warranty"-->
+<!--                                   type="radio">-->
+<!--                            <label class="form__button" for="warranty">-->
+<!--                                Да-->
+<!--                            </label>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="form__item">-->
+<!--                        <h2 class="form__label">Комплектация</h2>-->
+<!--                        <div class="form__buttons">-->
+<!--                            <input name="box" class="form__checkbox" id="formBox"-->
+<!--                                   type="checkbox">-->
+<!--                            <label class="form__button" for="formBox">Коробка</label>-->
+<!--                            <input name="cable" class="form__checkbox" id="formCable"-->
+<!--                                   type="checkbox">-->
+<!--                            <label class="form__button" for="formCable">Кабель</label>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="form__item">-->
+<!--                        <h2 class="form__label">Цвет</h2>-->
+<!--                        <div class="form__buttons">-->
+<!--                            <input value="white" name="color" class="form__radio" id="white"-->
+<!--                                   type="radio">-->
+<!--                            <label class="form__button" for="white">-->
+<!--                                Белый-->
+<!--                            </label>-->
+<!--                            <input value="black" name="color" class="form__radio"-->
+<!--                                   id="black"-->
+<!--                                   type="radio">-->
+<!--                            <label class="form__button" for="black">-->
+<!--                                Черный-->
+<!--                            </label>-->
+<!--                            <input value="gold" name="color" class="form__radio" id="gold"-->
+<!--                                   type="radio">-->
+<!--                            <label class="form__button" for="gold">-->
+<!--                                Золотой-->
+<!--                            </label>-->
+<!--                            <input value="grey" name="color" class="form__radio" id="grey"-->
+<!--                                   type="radio">-->
+<!--                            <label class="form__button" for="grey">-->
+<!--                                Серый-->
+<!--                            </label>-->
+<!--                            <input value="green" name="color" class="form__radio"-->
+<!--                                   id="green"-->
+<!--                                   type="radio">-->
+<!--                            <label class="form__button" for="green">-->
+<!--                                Зеленый-->
+<!--                            </label>-->
+<!--                            <input value="blue" name="color" class="form__radio" id="blue"-->
+<!--                                   type="radio">-->
+<!--                            <label class="form__button" for="blue">-->
+<!--                                Голубой-->
+<!--                            </label>-->
+<!--                            <input value="red" name="color" class="form__radio" id="red"-->
+<!--                                   type="radio">-->
+<!--                            <label class="form__button" for="red">-->
+<!--                                Красный-->
+<!--                            </label>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+<!--                &lt;!&ndash;УНИВЕРСАЛЬНЫЙ БЛОК C ИМЕНЕМ И ЛИЧНЫМИ ДАННЫМИ ПОЛЬЗОВАТЕЛЯ!!!&ndash;&gt;-->
+<!--                <div class="noDisplay" id="name_block">-->
+<!--                    <div class="form__item">-->
+<!--                        <label for="formName" class="form__label">Как Вас зовут? *</label>-->
+<!--                        <input id="formName" type="text" name="name" class="form__input">-->
+<!--                    </div>-->
+<!--                    <div class="form__item">-->
+<!--                        <label for="formEmail" class="form__label">Email *</label>-->
+<!--                        <input id="formEmail" type="text" name="email"-->
+<!--                               class="form__input">-->
+<!--                    </div>-->
+<!--                    <div class="form__item">-->
+<!--                        <label for="formPhoneNumber" class="form__label">Ваш телефон-->
+<!--                            *</label>-->
+<!--                        <input id="formPhoneNumber" type="text" name="phoneNumber"-->
+<!--                               class="form__input">-->
+<!--                    </div>-->
+<!--                    <div class="form__item">-->
+<!--                        <div class="checkbox">-->
+<!--                            <input id="formAgreement" checked type="checkbox"-->
+<!--                                   name="agreement"-->
+<!--                                   class="checkbox__input">-->
+<!--                            <label class="checkbox__label" for="formAgreement">-->
+<!--                            <span>Я согласен на обработку-->
+<!--                            <a href="#">персональных данных</a>-->
+<!--                            </span>-->
+<!--                            </label>-->
+<!--                        </div>-->
+<!--                        <button type="submit" class="form__submit">Получить результат-->
+<!--                        </button>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </form>-->
+        <form action="#" id="form_notebook" class="form_body"></form>
+        <form action="#" id="form_watch" class="form_body"></form>
+        <form action="#" id="form_tablet" class="form_body"></form>
+        <form action="#" id="form_smartphone" class="form_body"></form>
+
     </div>
 </div>
 <script src="iphones.js"></script>
