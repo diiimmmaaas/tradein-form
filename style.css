@@ -54,7 +54,6 @@ option {
     font-weight: 500;
     font-size: 14px;
     line-height: 17px;
-    font-variant: small-caps;
     color: #000000;
 }
 
@@ -64,7 +63,6 @@ option {
     font-weight: 500;
     font-size: 14px;
     line-height: 17px;
-    font-variant: small-caps;
     color: #000000;
 }
 
@@ -106,7 +104,6 @@ option {
     font-weight: 400;
     font-size: 15px;
     line-height: 30px;
-    font-variant: small-caps;
     color: #000000;
 }
 
@@ -122,7 +119,6 @@ option {
     font-weight: 700;
     font-size: 24px;
     line-height: 29px;
-    /*font-variant: small-caps;*/
     color: #000000;
     margin-bottom: 30px;
 }
@@ -139,7 +135,6 @@ option {
     font-weight: 700;
     font-size: 15px;
     line-height: 30px;
-    /*font-variant: small-caps;*/
     color: #000000;
     margin-bottom: 16px;
 }
@@ -147,6 +142,11 @@ option {
 .form__buttons {
     display: flex;
     flex-wrap: wrap;
+    gap: 10px;
+}
+
+.form_bigButtons {
+    flex-direction: column;
 }
 
 .form__radio {
@@ -154,7 +154,7 @@ option {
 }
 
 .form_bigButton {
-    width: 100%;
+    width: 460px;
     padding: 8px 16px;
     border-radius: 8px;
     font-family: Montserrat;
@@ -167,6 +167,12 @@ option {
     cursor: pointer;
     display: flex;
     flex-direction: column;
+}
+
+@media screen and (max-width: 765px) {
+    .form_bigButton {
+        width: 100%;
+    }
 }
 
 
@@ -214,7 +220,6 @@ option {
     font-weight: 500;
     font-size: 15px;
     line-height: 30px;
-    font-variant: small-caps;
     color: #000000;
     padding: 8px 16px;
     background: #F7F7F7;
@@ -279,6 +284,31 @@ option {
     object-fit: contain;
 }
 
+@media screen and (max-width: 765px) {
+    .smartphones_category img {
+        width: 45px;
+        height: 45px;
+        object-fit: contain;
+    }
+    .notebook_category img {
+        width: 50px;
+        height: 50px;
+        object-fit: contain;
+    }
+    .watch_category img {
+        width: 45px;
+        height: 45px;
+        object-fit: contain;
+    }
+    .tablet_category img {
+        width: 45px;
+        height: 45px;
+        object-fit: contain;
+    }
+}
+
+
+
 .form__input {
     background: #F3F3F3;
     border-radius: 8px;
@@ -326,6 +356,13 @@ option {
     color: #FFFFFF;
 }
 
+@media screen and (max-width: 765px) {
+    .form__submit {
+        width: 100%;
+        font-size: 14px;
+    }
+}
+
 .form__submit:active {
     background: #EC5900;
 }
@@ -336,7 +373,7 @@ option {
     flex-direction: column;
 }
 
-.form__inputRange div {
+.form__inputRange label {
     align-self: center;
     font-family: Montserrat;
     font-style: normal;
