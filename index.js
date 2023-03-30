@@ -18,7 +18,10 @@ window.addEventListener('load', () => {
   const selectDeviceConfigContainer = document.querySelector('.selectDeviceConfigContainer');
   const selectOtherPhone = document.querySelector('.selectOtherPhone');
 
-
+  const smartphonesCategory = document.querySelector('.smartphones_category');
+  const watchCategory = document.querySelector('.watch_category');
+  const notebookCategory = document.querySelector('.notebook_category');
+  const tabletCategory = document.querySelector('.tablet_category');
 
   const selectDevices = document.querySelector('.select_devices');
   const selectPhoneModel = document.querySelector('#select_model');
@@ -93,49 +96,38 @@ window.addEventListener('load', () => {
   selectLaptopDeveloperModel.addEventListener('change', changeLaptopModel);
 
 
-  selectDevices.addEventListener('change', () => {
-        let currentValue = selectDevices.options[selectDevices.selectedIndex].text;
+  let formNotebook = document.querySelector('.form_notebook');
+  let formWatch = document.querySelector('.form_watch');
+  let formLaptop = document.querySelector('.form_tablet');
+  let formSmartphone = document.querySelector('.form_smartphones');
 
-        // все формы
-        let formNotebook = document.querySelector('.form_notebook');
-        let formWatch = document.querySelector('.form_watch');
-        let formLaptop = document.querySelector('.form_tablet');
-        let formSmartphone = document.querySelector('.form_smartphones');
+  smartphonesCategory.addEventListener('click', () => {
+    formNotebook.classList.add('noDisplay');
+    formWatch.classList.add('noDisplay');
+    formLaptop.classList.add('noDisplay');
+    formSmartphone.classList.remove('noDisplay');
+  })
 
-        switch (currentValue) {
-          case '(не установлено)':
-            formNotebook.classList.add('noDisplay');
-            formWatch.classList.add('noDisplay');
-            formLaptop.classList.add('noDisplay');
-            formSmartphone.classList.add('noDisplay');
-            break
-          case 'Ноутбуки':
-            formNotebook.classList.remove('noDisplay');
-            formWatch.classList.add('noDisplay');
-            formLaptop.classList.add('noDisplay');
-            formSmartphone.classList.add('noDisplay');
-            break
-          case 'Смарт часы':
-            formWatch.classList.remove('noDisplay');
-            formNotebook.classList.add('noDisplay');
-            formLaptop.classList.add('noDisplay');
-            formSmartphone.classList.add('noDisplay');
-            break
-          case 'Планшеты':
-            formWatch.classList.add('noDisplay');
-            formNotebook.classList.add('noDisplay');
-            formLaptop.classList.remove('noDisplay');
-            formSmartphone.classList.add('noDisplay');
-            break
-          case 'Смартфоны':
-            formNotebook.classList.add('noDisplay');
-            formWatch.classList.add('noDisplay');
-            formLaptop.classList.add('noDisplay');
-            formSmartphone.classList.remove('noDisplay');
-            break
-        }
-      }
-  )
+  watchCategory.addEventListener('click', () => {
+    formWatch.classList.remove('noDisplay');
+    formNotebook.classList.add('noDisplay');
+    formLaptop.classList.add('noDisplay');
+    formSmartphone.classList.add('noDisplay');
+  })
+
+  notebookCategory.addEventListener('click', () => {
+    formNotebook.classList.remove('noDisplay');
+    formWatch.classList.add('noDisplay');
+    formLaptop.classList.add('noDisplay');
+    formSmartphone.classList.add('noDisplay');
+  })
+
+  tabletCategory.addEventListener('click', () => {
+    formWatch.classList.add('noDisplay');
+    formNotebook.classList.add('noDisplay');
+    formLaptop.classList.remove('noDisplay');
+    formSmartphone.classList.add('noDisplay');
+  })
 
   selectSmartphones.addEventListener('change', () => {
     let currentValue = selectSmartphones.options[selectSmartphones.selectedIndex].text;
