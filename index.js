@@ -183,15 +183,44 @@ window.addEventListener('load', () => {
 // ЭТО ФУНКЦИЯ ДЛЯ РАБОТЫ ПАМЯТИ!!!
 const values = [16, 32, 64, 128, 256, 512, 1000];
 
-const inputMemory = document.querySelector('.inputMemory'),
-  outputMemory = document.querySelector('.outputMemory');
-
-inputMemory.oninput = function() {
+function renderMemorySmartphone() {
   if (values[this.value] < 1000) {
-    outputMemory.innerHTML = values[this.value] + ' GB';
+    outputMemorySmartphone.innerHTML = values[this.value] + ' GB';
   } else {
-    outputMemory.innerHTML = 1 + ' TB'
+    outputMemorySmartphone.innerHTML = 1 + ' TB'
   }
-};
+}
 
-inputMemory.oninput();
+function renderMemoryLaptop() {
+  if (values[this.value] < 1000) {
+    outputMemoryLaptop.innerHTML = values[this.value] + ' GB';
+  } else {
+    outputMemoryLaptop.innerHTML = 1 + ' TB'
+  }
+}
+
+function renderMemoryTablet() {
+  if (values[this.value] < 1000) {
+    outputMemoryTablet.innerHTML = values[this.value] + ' GB';
+  } else {
+    outputMemoryTablet.innerHTML = 1 + ' TB'
+  }
+}
+
+const inputMemorySmartphone = document.querySelector('.inputMemorySmartphone'),
+  outputMemorySmartphone = document.querySelector('.outputMemorySmartphone');
+
+const inputMemoryLaptop = document.querySelector('.inputMemoryLaptop'),
+  outputMemoryLaptop = document.querySelector('.outputMemoryLaptop');
+
+const inputMemoryTablet = document.querySelector('.inputMemoryTablet'),
+  outputMemoryTablet = document.querySelector('.outputMemoryTablet');
+
+inputMemorySmartphone.oninput = renderMemorySmartphone;
+inputMemorySmartphone.oninput()
+
+inputMemoryLaptop.oninput = renderMemoryLaptop;
+inputMemoryLaptop.oninput()
+
+inputMemoryTablet.oninput = renderMemoryTablet;
+inputMemoryTablet.oninput()
