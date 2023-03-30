@@ -69,10 +69,26 @@ window.addEventListener('load', () => {
     }
   }
 
+  let selectLaptopDeveloperModel = document.querySelector('.select_laptopDeveloperModel');
+  let selectAppleIpadVersion = document.querySelector('.selectAppleIpadVersion');
+  let selectSamsungLaptopVersion = document.querySelector('.selectSamsungLaptopVersion');
+
+  function changeLaptopModel() {
+    let userChooseLaptopVersion = selectLaptopDeveloperModel.options[selectLaptopDeveloperModel.selectedIndex].text;
+    if (userChooseLaptopVersion === 'Apple') {
+      selectAppleIpadVersion.classList.remove('noDisplay');
+      selectSamsungLaptopVersion.classList.add('noDisplay');
+    } else {
+      selectAppleIpadVersion.classList.add('noDisplay');
+      selectSamsungLaptopVersion.classList.remove('noDisplay');
+    }
+  }
+
   selectNotebookDeveloperModel.addEventListener("change", changeMacbookModel)
   selectMacbookVersion.addEventListener("change", changeMacbookVersion)
 
   selectWatchDeveloperModel.addEventListener('change', changeWatchModel);
+  selectLaptopDeveloperModel.addEventListener('change', changeLaptopModel);
 
 
   selectDevices.addEventListener('change', () => {
@@ -88,17 +104,22 @@ window.addEventListener('load', () => {
           case '(не установлено)':
             formNotebook.classList.add('noDisplay');
             formWatch.classList.add('noDisplay');
+            formLaptop.classList.add('noDisplay');
             break
           case 'Ноутбуки':
             formNotebook.classList.remove('noDisplay');
             formWatch.classList.add('noDisplay');
+            formLaptop.classList.add('noDisplay');
             break
           case 'Смарт часы':
             formWatch.classList.remove('noDisplay');
             formNotebook.classList.add('noDisplay');
+            formLaptop.classList.add('noDisplay');
             break
           case 'Планшеты':
-            contentBlock.classList.remove('noDisplay')
+            formLaptop.classList.remove('noDisplay');
+            formNotebook.classList.add('noDisplay');
+            formWatch.classList.add('noDisplay');
             break
           case 'Смартфоны':
             contentBlock.classList.remove('noDisplay')
