@@ -7,26 +7,46 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>TradeIn-form</title>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
     </style>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="wrapper">
-    <div class="form">
+    <div class="page">
+        <h1 class="page_title">Trade in</h1>
+        <div class="page_description">Узнать приблизительную стоимость устройства можно онлайн. Для этого нужно заполнить форму ниже:  выберите характеристики и свойства соответствующие вашему устройству. На почту будет отправлено письмо с предложенной ценой для обмена или стоимость устройства, если вы хотите просто получить наличные.</div>
+    </div>
 
+    <div class="form">
         <h1 class="form__title">Рассчитать цену устройства</h1>
         <div class="form__item">
-            <label class="form__label">Выберите тип устройства
-                *</label>
-            <select name="device"
-                    class="form_select select_devices">
-                <option value="notSelected">(не установлено)</option>
-                <option value="notebook">Ноутбуки</option>
-                <option value="watch">Смарт часы</option>
-                <option value="tablet">Планшеты</option>
-                <option value="smartphones">Смартфоны</option>
-            </select>
+            <div class="device_container">
+                <input value="smartphones_category" name="device" class="form__radio"
+                       id="smartphones_category"
+                       type="radio">
+                <label class="form__button smartphones_category" for="smartphones_category">
+                    <img src="assets/smartphone.svg" alt="smartphones_category">
+                </label>
+                <input value="watch_category" name="device" class="form__radio"
+                       id="watch_category"
+                       type="radio">
+                <label class="form__button watch_category" for="watch_category">
+                    <img src="assets/watch.svg" alt="smartphones_category">
+                </label>
+                <input value="notebook_category" name="device" class="form__radio"
+                       id="notebook_category"
+                       type="radio">
+                <label class="form__button notebook_category" for="notebook_category">
+                    <img src="assets/notebook.svg" alt="smartphones_category">
+                </label>
+                <input value="tablet_category" name="device" class="form__radio"
+                       id="tablet_category"
+                       type="radio">
+                <label class="form__button tablet_category" for="tablet_category">
+                    <img src="assets/tablet.svg" alt="smartphones_category">
+                </label>
+            </div>
         </div>
 
         <form action="#" class="form__body noDisplay form_smartphones" id="form_smartphones">
@@ -83,14 +103,13 @@
                                    type="radio">
                             <label class="form_bigButton" for="excellent">
                                 <span class="form_bigButton__text">Отличное</span>
-                                <span class="form_bigButton__description">Отличное состояние</span>
+                                <span class="form_bigButton__description">Отсутствуют мелкие царапины и потертости</span>
                             </label>
                             <input value="good" name="state" class="form__radio" id="good"
                                    type="radio">
                             <label class="form_bigButton" for="good">
                                 <span class="form_bigButton__text">Хорошее</span>
-                                <span class="form_bigButton__description">Мелкие царапины и
-                                        потертости</span>
+                                <span class="form_bigButton__description">Есть мелкие царапины и потертости</span>
                             </label>
                             <input value="average" name="state" class="form__radio"
                                    id="average"
@@ -181,19 +200,19 @@
                 </div>
             </div>
 
-            <div id="name_block">
+            <div id="name_block" class="name__block">
+                <h1 class="form__title">Данные для связи</h1>
                 <div class="form__item">
-                    <label for="formName" class="form__label">Как Вас зовут? *</label>
+                    <label for="formName" class="form__label">Введите Имя*</label>
                     <input id="formName" type="text" name="name" class="form__input">
                 </div>
                 <div class="form__item">
-                    <label for="formEmail" class="form__label">Email *</label>
+                    <label for="formEmail" class="form__label">Укажите e-mail*</label>
                     <input id="formEmail" type="text" name="email"
                            class="form__input">
                 </div>
                 <div class="form__item">
-                    <label for="formPhoneNumber" class="form__label">Ваш телефон
-                        *</label>
+                    <label for="formPhoneNumber" class="form__label">Ваш номер телефона*</label>
                     <input id="formPhoneNumber" type="text" name="phoneNumber"
                            class="form__input">
                 </div>
@@ -291,14 +310,13 @@
                                type="radio">
                         <label class="form_bigButton">
                             <span class="form_bigButton__text">Отличное</span>
-                            <span class="form_bigButton__description">Отличное состояние</span>
+                            <span class="form_bigButton__description">Отсутствуют мелкие царапины и потертости</span>
                         </label>
                         <input value="good" name="state" class="form__radio good"
                                type="radio">
                         <label class="form_bigButton">
                             <span class="form_bigButton__text">Хорошее</span>
-                            <span class="form_bigButton__description">Мелкие царапины и
-                                потертости</span>
+                            <span class="form_bigButton__description">Есть мелкие царапины и потертости</span>
                         </label>
                         <input value="average" name="state" class="form__radio average"
                                type="radio">
@@ -383,17 +401,18 @@
             </div>
 
             <div class="name_block">
+                <h1 class="form__title">Данные для связи</h1>
                 <div class="form__item">
-                    <label class="form__label">Как Вас зовут? *</label>
+                    <label class="form__label">Введите Имя*</label>
                     <input type="text" name="name" class="form__input formName">
                 </div>
                 <div class="form__item">
-                    <label class="form__label formEmail">Email *</label>
+                    <label class="form__label formEmail">Укажите e-mail*</label>
                     <input type="text" name="email"
                            class="form__input">
                 </div>
                 <div class="form__item">
-                    <label class="form__label">Ваш телефон
+                    <label class="form__label">Ваш номер телефона*
                         *</label>
                     <input type="text" name="phoneNumber"
                            class="form__input formPhoneNumber">
@@ -413,8 +432,6 @@
                     </button>
                 </div>
             </div>
-
-
         </form>
 
 
@@ -476,14 +493,13 @@
                                type="radio">
                         <label class="form_bigButton">
                             <span class="form_bigButton__text">Отличное</span>
-                            <span class="form_bigButton__description">Отличное состояние</span>
+                            <span class="form_bigButton__description">Отсутствуют мелкие царапины и потертости</span>
                         </label>
                         <input value="good" name="state" class="form__radio good"
                                type="radio">
                         <label class="form_bigButton">
                             <span class="form_bigButton__text">Хорошее</span>
-                            <span class="form_bigButton__description">Мелкие царапины и
-                                потертости</span>
+                            <span class="form_bigButton__description">Есть мелкие царапины и потертости</span>
                         </label>
                         <input value="average" name="state" class="form__radio average"
                                type="radio">
@@ -568,18 +584,18 @@
             </div>
 
             <div class="name_block">
+                <h1 class="form__title">Данные для связи</h1>
                 <div class="form__item">
-                    <label class="form__label">Как Вас зовут? *</label>
+                    <label class="form__label">Введите Имя*</label>
                     <input type="text" name="name" class="form__input formName">
                 </div>
                 <div class="form__item">
-                    <label class="form__label formEmail">Email *</label>
+                    <label class="form__label formEmail">Укажите e-mail*</label>
                     <input type="text" name="email"
                            class="form__input">
                 </div>
                 <div class="form__item">
-                    <label class="form__label">Ваш телефон
-                        *</label>
+                    <label class="form__label">Ваш номер телефона*</label>
                     <input type="text" name="phoneNumber"
                            class="form__input formPhoneNumber">
                 </div>
@@ -598,15 +614,7 @@
                     </button>
                 </div>
             </div>
-
         </form>
-
-
-
-
-
-
-
 
         <form action="#" class="form_body noDisplay form_tablet">
             <div class="form__item selectLaptopDeveloperContainer">
@@ -669,14 +677,13 @@
                                type="radio">
                         <label class="form_bigButton">
                             <span class="form_bigButton__text">Отличное</span>
-                            <span class="form_bigButton__description">Отличное состояние</span>
+                            <span class="form_bigButton__description">Отсутствуют мелкие царапины и потертости</span>
                         </label>
                         <input value="good" name="state" class="form__radio good"
                                type="radio">
                         <label class="form_bigButton">
                             <span class="form_bigButton__text">Хорошее</span>
-                            <span class="form_bigButton__description">Мелкие царапины и
-                                потертости</span>
+                            <span class="form_bigButton__description">Есть мелкие царапины и потертости</span>
                         </label>
                         <input value="average" name="state" class="form__radio average"
                                type="radio">
@@ -761,18 +768,18 @@
             </div>
 
             <div class="name_block">
+                <h1 class="form__title">Данные для связи</h1>
                 <div class="form__item">
-                    <label class="form__label">Как Вас зовут? *</label>
+                    <label class="form__label">Введите Имя*</label>
                     <input type="text" name="name" class="form__input formName">
                 </div>
                 <div class="form__item">
-                    <label class="form__label formEmail">Email *</label>
+                    <label class="form__label formEmail">Укажите e-mail*</label>
                     <input type="text" name="email"
                            class="form__input">
                 </div>
                 <div class="form__item">
-                    <label class="form__label">Ваш телефон
-                        *</label>
+                    <label class="form__label">Ваш номер телефона*</label>
                     <input type="text" name="phoneNumber"
                            class="form__input formPhoneNumber">
                 </div>

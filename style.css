@@ -13,7 +13,7 @@ code {
     margin: 0;
     box-sizing: border-box;
     outline: none;
-    font-family: Roboto-Regular, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-style: normal;
     letter-spacing: -.02em
 }
@@ -48,11 +48,66 @@ input {
     border: none;
 }
 
+option {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    font-variant: small-caps;
+    color: #000000;
+}
+
+.outputMemory {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    font-variant: small-caps;
+    color: #000000;
+}
+
 .wrapper {
     width: 100%;
     min-height: 100vh;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.page {
+    width: 80%;
+    margin-top: 90px;
+    margin-bottom: 110px;
+}
+
+.device_container {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+}
+
+.page_title {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 70px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #000000;
+}
+
+.page_description {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 30px;
+    font-variant: small-caps;
+    color: #000000;
 }
 
 .form {
@@ -62,36 +117,36 @@ input {
 }
 
 .form__title {
-    font-family: Montserrat;
+    font-family: 'Montserrat';
     font-style: normal;
-    font-weight: 500;
+    font-weight: 700;
     font-size: 24px;
     line-height: 29px;
-    color: #06070D;
-    margin-bottom: 36px;
+    /*font-variant: small-caps;*/
+    color: #000000;
+    margin-bottom: 30px;
 }
 
 .form__item {
     display: flex;
     flex-direction: column;
+    margin-bottom: 30px;
 }
 
 .form__label {
-    font-family: Montserrat;
+    font-family: 'Montserrat';
     font-style: normal;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 20px;
-    letter-spacing: -0.02em;
-    color: #06070D;
-    margin-top: 40px;
-    margin-bottom: 12px;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 30px;
+    /*font-variant: small-caps;*/
+    color: #000000;
+    margin-bottom: 16px;
 }
 
 .form__buttons {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
 }
 
 .form__radio {
@@ -108,7 +163,7 @@ input {
     font-size: 14px;
     line-height: 24px;
     margin: 10px 0px;
-    background: #F3F3F3;
+    background: #F7F7F7;
     cursor: pointer;
     display: flex;
     flex-direction: column;
@@ -122,14 +177,14 @@ input {
 }
 
 .form_bigButton:active {
-    color: #fff;
-    background-color: #000;
+    color: #000000;
+    background-color: #C8C8C8;
     justify-content: space-between;
 }
 
 .form__radio:checked + .form_bigButton {
-    color: #fff;
-    background-color: #000;
+    color: #000000;
+    background-color: #C8C8C8;
     justify-content: space-between;
 }
 
@@ -154,19 +209,22 @@ input {
 }
 
 .form__button {
-    padding: 8px 16px;
-    background: #F3F3F3;
-    border-radius: 8px;
-    font-family: Montserrat;
+    font-family: 'Montserrat';
     font-style: normal;
     font-weight: 500;
-    font-size: 14px;
-    line-height: 24px;
-    text-align: center;
+    font-size: 15px;
+    line-height: 30px;
+    font-variant: small-caps;
     color: #000000;
-    margin: 10px 0px;
+    padding: 8px 16px;
+    background: #F7F7F7;
+    border-radius: 8px;
+    text-align: center;
     margin-right: 8px;
     cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 
@@ -177,8 +235,8 @@ input {
 }
 
 .form__button:active {
-    color: #fff;
-    background-color: #000;
+    color: #000000;
+    background: #C8C8C8;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -186,14 +244,40 @@ input {
 
 .form__checkbox:checked + .form__button,
 .form__radio:checked + .form__button {
-    color: #fff;
-    background-color: #000;
+    color: #000000;
+    background: #C8C8C8;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
+.smartphones_category,
+.notebook_category,
+.watch_category,
+.tablet_category {
 
+}
+
+.smartphones_category img {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+}
+.notebook_category img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
+.watch_category img {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+}
+.tablet_category img {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+}
 
 .form__input {
     background: #F3F3F3;
@@ -208,9 +292,9 @@ input {
     height: 41px;
     margin: 0 0px 0px;
     padding: 0 33px 0 11px;
-    border-radius: 3px;
-    background: #fafafa;
-    border: 1px solid #eeeeee;
+    border-radius: 5px;
+    background: #F7F7F7;
+    border: 1px solid #F7F7F7;
     cursor: pointer;
 }
 
@@ -228,20 +312,22 @@ input {
 }
 
 .form__submit {
-    background: #06070D;
+    background: #FF3F00;
+    border-radius: 5px;
     box-shadow: 0px 4px 32px rgba(7, 8, 14, 0.1);
-    border-radius: 12px;
-    width: 100%;
-    padding-top: 19px;
-    padding-bottom: 19px;
-    color: #fff;
-    font-family: Montserrat;
+    width: 400px;
+    font-family: 'Montserrat';
     font-style: normal;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 20px;
-    text-align: center;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 70px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
     color: #FFFFFF;
+}
+
+.form__submit:active {
+    background: #EC5900;
 }
 
 .form__inputRange {
@@ -264,4 +350,8 @@ input {
 
 .noDisplay {
     display: none;
+}
+
+.name__block {
+    margin-top: 60px;
 }
