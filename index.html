@@ -90,14 +90,16 @@
                         <h2 class="form__label">Объем памяти</h2>
                         <!--                    ПОЛЗУНОК ПАМЯТИ!-->
                         <div class="form__inputRange">
-                            <input name="memory" class="inputMemory" type="range" min="0"
+                            <input id="memory_smartphone" name="memory"
+                                   class="inputMemory" type="range"
+                                   min="0"
                                    value="0" max="6" step="1">
-                            <div class="outputMemory"></div>
+                            <label for="memory_smartphone" class="outputMemory"></label>
                         </div>
                     </div>
                     <div class="form__item">
                         <h2 class="form__label">Состояние</h2>
-                        <div class="form__buttons">
+                        <div class="form__buttons form_bigButtons">
                             <input value="excellent" name="state" class="form__radio"
                                    id="excellent"
                                    type="radio">
@@ -295,38 +297,40 @@
                     <h2 class="form__label">Объем памяти</h2>
                     <!--                    ПОЛЗУНОК ПАМЯТИ!-->
                     <div class="form__inputRange">
-                        <input name="memory" class="inputMemory" type="range" min="0"
+                        <input id="memory_notebook" name="memory"
+                               class="inputMemory" type="range"
+                               min="0"
                                value="0" max="6" step="1">
-                        <div class="outputMemory"></div>
+                        <label for="memory_notebook" class="outputMemory"></label>
                     </div>
                     <!--                    ПОЛЗУНОК ПАМЯТИ!-->
-
                 </div>
                 <div class="form__item">
                     <h2 class="form__label">Состояние</h2>
-                    <div class="form__buttons">
-                        <input value="excellent" name="state"
-                               class="form__radio excellent"
+                    <div class="form__buttons form_bigButtons">
+                        <input value="excellent" name="state" class="form__radio"
+                               id="excellent_notebook"
                                type="radio">
-                        <label class="form_bigButton">
+                        <label class="form_bigButton" for="excellent_notebook">
                             <span class="form_bigButton__text">Отличное</span>
                             <span class="form_bigButton__description">Отсутствуют мелкие царапины и потертости</span>
                         </label>
-                        <input value="good" name="state" class="form__radio good"
+                        <input value="good" name="state" class="form__radio" id="good_notebook"
                                type="radio">
-                        <label class="form_bigButton">
+                        <label class="form_bigButton" for="good_notebook">
                             <span class="form_bigButton__text">Хорошее</span>
                             <span class="form_bigButton__description">Есть мелкие царапины и потертости</span>
                         </label>
-                        <input value="average" name="state" class="form__radio average"
+                        <input value="average" name="state" class="form__radio"
+                               id="average_notebook"
                                type="radio">
-                        <label class="form_bigButton">
+                        <label class="form_bigButton" for="average_notebook">
                             <span class="form_bigButton__text">Среднее</span>
                             <span class="form_bigButton__description">Царапины, потертости и мелкие вмятины</span>
                         </label>
-                        <input value="bad" name="state" class="form__radio bad"
+                        <input value="bad" name="state" class="form__radio" id="bad_notebook"
                                type="radio">
-                        <label class="form_bigButton">
+                        <label class="form_bigButton" for="bad_notebook">
                             <span class="form_bigButton__text">Плохое</span>
                             <span class="form_bigButton__description">Глубокие царапины, потертости и сколы</span>
                         </label>
@@ -335,14 +339,16 @@
                 <div class="form__item">
                     <h2 class="form__label">Гарантия</h2>
                     <div class="form__buttons">
-                        <input value="yes" name="warranty" class="form__radio warranty"
+                        <input id="yes_notebook" value="yes" name="warranty"
+                               class="form__radio warranty"
                                type="radio">
-                        <label class="form__button">
+                        <label for="yes_notebook" class="form__button">
                             Да
                         </label>
-                        <input value="no" name="warranty" class="form__radio no_warranty"
+                        <input id="no_notebook" value="no" name="warranty"
+                               class="form__radio no_warranty"
                                type="radio">
-                        <label class="form__button">
+                        <label for="no_notebook" class="form__button">
                             Нет
                         </label>
                     </div>
@@ -350,50 +356,58 @@
                 <div class="form__item">
                     <h2 class="form__label">Комплектация</h2>
                     <div class="form__buttons">
-                        <input name="box" class="form__checkbox formBox"
+                        <input id="box_notebook" name="box" class="form__checkbox formBox"
                                type="checkbox">
-                        <label class="form__button">Коробка</label>
-                        <input name="cable" class="form__checkbox formCable"
+                        <label for="box_notebook" class="form__button">Коробка</label>
+                        <input id="cable_notebook" name="cable"
+                               class="form__checkbox formCable"
                                type="checkbox">
-                        <label class="form__button">Кабель</label>
+                        <label for="cable_notebook" class="form__button">Кабель</label>
                     </div>
                 </div>
                 <div class="form__item">
                     <h2 class="form__label">Цвет</h2>
                     <div class="form__buttons">
-                        <input value="white" name="color" class="form__radio white"
+                        <input id="white_notebook" value="white" name="color"
+                               class="form__radio white"
                                type="radio">
-                        <label class="form__button">
+                        <label for="white_notebook" class="form__button">
                             Белый
                         </label>
-                        <input value="black" name="color" class="form__radio black"
+                        <input id="black_notebook" value="black" name="color"
+                               class="form__radio black"
                                type="radio">
-                        <label class="form__button">
+                        <label for="black_notebook" class="form__button">
                             Черный
                         </label>
-                        <input value="gold" name="color" class="form__radio gold"
+                        <input id="gold_notebook" value="gold" name="color"
+                               class="form__radio gold"
                                type="radio">
-                        <label class="form__button">
+                        <label for="gold_notebook" class="form__button">
                             Золотой
                         </label>
-                        <input value="grey" name="color" class="form__radio grey"
+                        <input id="grey_notebook" value="grey" name="color"
+                               class="form__radio grey"
                                type="radio">
-                        <label class="form__button">
+                        <label for="grey_notebook" class="form__button">
                             Серый
                         </label>
-                        <input value="green" name="color" class="form__radio green"
+                        <input id="green_notebook" value="green" name="color"
+                               class="form__radio green"
                                type="radio">
-                        <label class="form__button">
+                        <label for="green_notebook" class="form__button">
                             Зеленый
                         </label>
-                        <input value="blue" name="color" class="form__radio blue"
+                        <input id="blue_notebook" value="blue" name="color"
+                               class="form__radio blue"
                                type="radio">
-                        <label class="form__button">
+                        <label for="blue_notebook" class="form__button">
                             Голубой
                         </label>
-                        <input value="red" name="color" class="form__radio red"
+                        <input id="red_notebook" value="red" name="color"
+                               class="form__radio red"
                                type="radio">
-                        <label class="form__button">
+                        <label for="red_notebook" class="form__button">
                             Красный
                         </label>
                     </div>
@@ -487,29 +501,30 @@
 
                 <div class="form__item">
                     <h2 class="form__label">Состояние</h2>
-                    <div class="form__buttons">
-                        <input value="excellent" name="state"
+                    <div class="form__buttons form_bigButtons">
+                        <input id="excellent_watch" value="excellent" name="state"
                                class="form__radio excellent"
                                type="radio">
-                        <label class="form_bigButton">
+                        <label for="excellent_watch" class="form_bigButton">
                             <span class="form_bigButton__text">Отличное</span>
                             <span class="form_bigButton__description">Отсутствуют мелкие царапины и потертости</span>
                         </label>
-                        <input value="good" name="state" class="form__radio good"
+                        <input id="good_watch" value="good" name="state" class="form__radio good"
                                type="radio">
-                        <label class="form_bigButton">
+                        <label for="good_watch" class="form_bigButton">
                             <span class="form_bigButton__text">Хорошее</span>
                             <span class="form_bigButton__description">Есть мелкие царапины и потертости</span>
                         </label>
-                        <input value="average" name="state" class="form__radio average"
+                        <input id="average_watch" value="average" name="state"
+                               class="form__radio average"
                                type="radio">
-                        <label class="form_bigButton">
+                        <label for="average_watch" class="form_bigButton">
                             <span class="form_bigButton__text">Среднее</span>
                             <span class="form_bigButton__description">Царапины, потертости и мелкие вмятины</span>
                         </label>
-                        <input value="bad" name="state" class="form__radio bad"
+                        <input id="bad_watch" value="bad" name="state" class="form__radio bad"
                                type="radio">
-                        <label class="form_bigButton">
+                        <label for="bad_watch" class="form_bigButton">
                             <span class="form_bigButton__text">Плохое</span>
                             <span class="form_bigButton__description">Глубокие царапины, потертости и сколы</span>
                         </label>
@@ -518,14 +533,16 @@
                 <div class="form__item">
                     <h2 class="form__label">Гарантия</h2>
                     <div class="form__buttons">
-                        <input value="yes" name="warranty" class="form__radio warranty"
+                        <input id="yes_watch" value="yes" name="warranty"
+                               class="form__radio warranty"
                                type="radio">
-                        <label class="form__button">
+                        <label for="yes_watch" class="form__button">
                             Да
                         </label>
-                        <input value="no" name="warranty" class="form__radio no_warranty"
+                        <input id="no_watch" value="no" name="warranty"
+                               class="form__radio no_warranty"
                                type="radio">
-                        <label class="form__button">
+                        <label for="no_watch" class="form__button">
                             Нет
                         </label>
                     </div>
@@ -533,50 +550,58 @@
                 <div class="form__item">
                     <h2 class="form__label">Комплектация</h2>
                     <div class="form__buttons">
-                        <input name="box" class="form__checkbox formBox"
+                        <input id="box_watch" name="box" class="form__checkbox formBox"
                                type="checkbox">
-                        <label class="form__button">Коробка</label>
-                        <input name="cable" class="form__checkbox formCable"
+                        <label for="box_watch" class="form__button">Коробка</label>
+                        <input id="cable_watch" name="cable"
+                               class="form__checkbox formCable"
                                type="checkbox">
-                        <label class="form__button">Кабель</label>
+                        <label for="cable_watch" class="form__button">Кабель</label>
                     </div>
                 </div>
                 <div class="form__item">
                     <h2 class="form__label">Цвет</h2>
                     <div class="form__buttons">
-                        <input value="white" name="color" class="form__radio white"
+                        <input id="white_watch" value="white" name="color"
+                               class="form__radio white"
                                type="radio">
-                        <label class="form__button">
+                        <label for="white_watch" class="form__button">
                             Белый
                         </label>
-                        <input value="black" name="color" class="form__radio black"
+                        <input id="black_watch" value="black" name="color"
+                               class="form__radio black"
                                type="radio">
-                        <label class="form__button">
+                        <label for="black_watch" class="form__button">
                             Черный
                         </label>
-                        <input value="gold" name="color" class="form__radio gold"
+                        <input id="gold_watch" value="gold" name="color"
+                               class="form__radio gold"
                                type="radio">
-                        <label class="form__button">
+                        <label for="gold_watch" class="form__button">
                             Золотой
                         </label>
-                        <input value="grey" name="color" class="form__radio grey"
+                        <input id="grey_watch" value="grey" name="color"
+                               class="form__radio grey"
                                type="radio">
-                        <label class="form__button">
+                        <label for="grey_watch" class="form__button">
                             Серый
                         </label>
-                        <input value="green" name="color" class="form__radio green"
+                        <input id="green_watch" value="green" name="color"
+                               class="form__radio green"
                                type="radio">
-                        <label class="form__button">
+                        <label for="green_watch" class="form__button">
                             Зеленый
                         </label>
-                        <input value="blue" name="color" class="form__radio blue"
+                        <input id="blue_watch" value="blue" name="color"
+                               class="form__radio blue"
                                type="radio">
-                        <label class="form__button">
+                        <label for="blue_watch" class="form__button">
                             Голубой
                         </label>
-                        <input value="red" name="color" class="form__radio red"
+                        <input id="red_watch" value="red" name="color"
+                               class="form__radio red"
                                type="radio">
-                        <label class="form__button">
+                        <label for="red_watch" class="form__button">
                             Красный
                         </label>
                     </div>
@@ -672,28 +697,32 @@
 
                 <div class="form__item">
                     <h2 class="form__label">Состояние</h2>
-                    <div class="form__buttons">
-                        <input value="excellent" name="state" class="form__radio excellent"
+                    <div class="form__buttons form_bigButtons">
+                        <input id="excellent_tablet" value="excellent" name="state"
+                                class="form__radio excellent"
                                type="radio">
-                        <label class="form_bigButton">
+                        <label for="excellent_tablet" class="form_bigButton">
                             <span class="form_bigButton__text">Отличное</span>
                             <span class="form_bigButton__description">Отсутствуют мелкие царапины и потертости</span>
                         </label>
-                        <input value="good" name="state" class="form__radio good"
+                        <input id="good_tablet" value="good" name="state"
+                               class="form__radio good"
                                type="radio">
-                        <label class="form_bigButton">
+                        <label for="good_tablet" class="form_bigButton">
                             <span class="form_bigButton__text">Хорошее</span>
                             <span class="form_bigButton__description">Есть мелкие царапины и потертости</span>
                         </label>
-                        <input value="average" name="state" class="form__radio average"
+                        <input id="average_tablet" value="average" name="state"
+                               class="form__radio average"
                                type="radio">
-                        <label class="form_bigButton">
+                        <label for="average_tablet" class="form_bigButton">
                             <span class="form_bigButton__text">Среднее</span>
                             <span class="form_bigButton__description">Царапины, потертости и мелкие вмятины</span>
                         </label>
-                        <input value="bad" name="state" class="form__radio bad"
+                        <input id="bad_tablet" value="bad" name="state"
+                               class="form__radio bad"
                                type="radio">
-                        <label class="form_bigButton">
+                        <label for="bad_tablet" class="form_bigButton">
                             <span class="form_bigButton__text">Плохое</span>
                             <span class="form_bigButton__description">Глубокие царапины, потертости и сколы</span>
                         </label>
@@ -702,14 +731,16 @@
                 <div class="form__item">
                     <h2 class="form__label">Гарантия</h2>
                     <div class="form__buttons">
-                        <input value="yes" name="warranty" class="form__radio warranty"
+                        <input id="yes_tablet" value="yes" name="warranty"
+                               class="form__radio warranty"
                                type="radio">
-                        <label class="form__button">
+                        <label for="yes_tablet" class="form__button">
                             Да
                         </label>
-                        <input value="no" name="warranty" class="form__radio no_warranty"
+                        <input id="no_tablet" value="no" name="warranty"
+                               class="form__radio no_warranty"
                                type="radio">
-                        <label class="form__button">
+                        <label for="no_tablet" class="form__button">
                             Нет
                         </label>
                     </div>
@@ -717,50 +748,58 @@
                 <div class="form__item">
                     <h2 class="form__label">Комплектация</h2>
                     <div class="form__buttons">
-                        <input name="box" class="form__checkbox formBox"
+                        <input id="box_tablet" name="box" class="form__checkbox formBox"
                                type="checkbox">
-                        <label class="form__button">Коробка</label>
-                        <input name="cable" class="form__checkbox formCable"
+                        <label for="box_tablet" class="form__button">Коробка</label>
+                        <input id="cable_tablet" name="cable"
+                               class="form__checkbox formCable"
                                type="checkbox">
-                        <label class="form__button">Кабель</label>
+                        <label for="cable_tablet" class="form__button">Кабель</label>
                     </div>
                 </div>
                 <div class="form__item">
                     <h2 class="form__label">Цвет</h2>
                     <div class="form__buttons">
-                        <input value="white" name="color" class="form__radio white"
+                        <input id="white_tablet" value="white" name="color"
+                               class="form__radio white"
                                type="radio">
-                        <label class="form__button">
+                        <label for="white_tablet" class="form__button">
                             Белый
                         </label>
-                        <input value="black" name="color" class="form__radio black"
+                        <input id="black_tablet" value="black" name="color"
+                               class="form__radio black"
                                type="radio">
-                        <label class="form__button">
+                        <label for="black_tablet" class="form__button">
                             Черный
                         </label>
-                        <input value="gold" name="color" class="form__radio gold"
+                        <input id="gold_tablet" value="gold" name="color"
+                               class="form__radio gold"
                                type="radio">
-                        <label class="form__button">
+                        <label for="gold_tablet" class="form__button">
                             Золотой
                         </label>
-                        <input value="grey" name="color" class="form__radio grey"
+                        <input id="grey_tablet" value="grey" name="color"
+                               class="form__radio grey"
                                type="radio">
-                        <label class="form__button">
+                        <label for="grey_tablet" class="form__button">
                             Серый
                         </label>
-                        <input value="green" name="color" class="form__radio green"
+                        <input id="green_tablet" value="green" name="color"
+                               class="form__radio green"
                                type="radio">
-                        <label class="form__button">
+                        <label for="green_tablet" class="form__button">
                             Зеленый
                         </label>
-                        <input value="blue" name="color" class="form__radio blue"
+                        <input id="blue_tablet" value="blue" name="color"
+                               class="form__radio blue"
                                type="radio">
-                        <label class="form__button">
+                        <label for="blue_tablet" class="form__button">
                             Голубой
                         </label>
-                        <input value="red" name="color" class="form__radio red"
+                        <input id="red_tablet" value="red" name="color"
+                               class="form__radio red"
                                type="radio">
-                        <label class="form__button">
+                        <label for="red_tablet" class="form__button">
                             Красный
                         </label>
                     </div>
