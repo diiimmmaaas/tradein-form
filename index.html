@@ -57,8 +57,8 @@
                     <label for="select_smartphones" class="form__label">Выберите
                         производителя Вашего смартфона
                         *</label>
-                    <select name="smartphoneDeveloper" id="select_smartphones"
-                            class="form_select select_smartphones">
+                    <select name="Производитель смартфона" id="select_smartphones"
+                            class="form_select select_smartphones _req">
                         <option value="notSelected">(не установлено)</option>
                         <option value="Apple">Apple</option>
                         <option value="Samsung">Samsung</option>
@@ -71,9 +71,11 @@
 
                 <!--БЛОК ДЛЯ ВЫБОРА МОДЕЛИ СМАРТФОНА!!!-->
                 <div class="form__item" id="selectPhoneModelBlock">
-                    <label for="select_model" class="form__label">Выберите модель
+                    <label for="select_model" class="form__label">Выберите
+                        модель
                         смартфона *</label>
-                    <select name="smartphone" id="select_model" class="form_select">
+                    <select name="Модель смартфона" id="select_model"
+                            class="form_select _req">
                         <option value="notSelected">(не установлено)</option>
                     </select>
                 </div>
@@ -82,7 +84,7 @@
                     <label class="form__label">Введите
                         название Вашего смартфона</label>
                     <input class="form__input select_otherPhone" type="text"
-                           name="notebookModel">
+                           name="Другая модель смартфона">
                 </div>
 
                 <div class="selectDeviceConfigContainer">
@@ -90,7 +92,7 @@
                         <h2 class="form__label">Объем памяти</h2>
                         <!--                    ПОЛЗУНОК ПАМЯТИ!-->
                         <div class="form__inputRange">
-                            <input id="memory_smartphone" name="memory"
+                            <input id="memory_smartphone" name="Количество памяти"
                                    class="inputMemorySmartphone"
                                     type="range" min="0"
                                    value="0" max="6" step="1">
@@ -100,27 +102,27 @@
                     <div class="form__item">
                         <h2 class="form__label">Состояние</h2>
                         <div class="form__buttons form_bigButtons">
-                            <input value="excellent" name="state" class="form__radio"
+                            <input value="Отличное" name="Состояние" class="form__radio"
                                    id="excellent"
                                    type="radio">
                             <label class="form_bigButton" for="excellent">
                                 <span class="form_bigButton__text">Отличное</span>
                                 <span class="form_bigButton__description">Отсутствуют мелкие царапины и потертости</span>
                             </label>
-                            <input value="good" name="state" class="form__radio" id="good"
+                            <input value="Хорошее" name="Состояние" class="form__radio" id="good"
                                    type="radio">
                             <label class="form_bigButton" for="good">
                                 <span class="form_bigButton__text">Хорошее</span>
                                 <span class="form_bigButton__description">Есть мелкие царапины и потертости</span>
                             </label>
-                            <input value="average" name="state" class="form__radio"
+                            <input value="Среднее" name="Состояние" class="form__radio"
                                    id="average"
                                    type="radio">
                             <label class="form_bigButton" for="average">
                                 <span class="form_bigButton__text">Среднее</span>
                                 <span class="form_bigButton__description">Царапины, потертости и мелкие вмятины</span>
                             </label>
-                            <input value="bad" name="state" class="form__radio" id="bad"
+                            <input value="Плохое" name="Состояние" class="form__radio" id="bad"
                                    type="radio">
                             <label class="form_bigButton" for="bad">
                                 <span class="form_bigButton__text">Плохое</span>
@@ -131,13 +133,13 @@
                     <div class="form__item">
                         <h2 class="form__label">Гарантия</h2>
                         <div class="form__buttons">
-                            <input value="no" name="warranty" class="form__radio"
+                            <input value="Нет" name="Гарантия" class="form__radio"
                                    id="no_warranty"
                                    type="radio">
                             <label class="form__button" for="no_warranty">
                                 Нет
                             </label>
-                            <input value="yes" name="warranty" class="form__radio"
+                            <input value="Да" name="Гарантия" class="form__radio"
                                    id="warranty"
                                    type="radio">
                             <label class="form__button" for="warranty">
@@ -148,10 +150,10 @@
                     <div class="form__item">
                         <h2 class="form__label">Комплектация</h2>
                         <div class="form__buttons">
-                            <input name="box" class="form__checkbox" id="formBox"
+                            <input name="Коробка" class="form__checkbox" id="formBox"
                                    type="checkbox">
                             <label class="form__button" for="formBox">Коробка</label>
-                            <input name="cable" class="form__checkbox" id="formCable"
+                            <input name="Кабель" class="form__checkbox" id="formCable"
                                    type="checkbox">
                             <label class="form__button" for="formCable">Кабель</label>
                         </div>
@@ -159,40 +161,40 @@
                     <div class="form__item">
                         <h2 class="form__label">Цвет</h2>
                         <div class="form__buttons">
-                            <input value="white" name="color" class="form__radio"
+                            <input value="Белый" name="Цвет" class="form__radio"
                                    id="white"
                                    type="radio">
                             <label class="form__button" for="white">
                                 Белый
                             </label>
-                            <input value="black" name="color" class="form__radio"
+                            <input value="Черный" name="Цвет" class="form__radio"
                                    id="black"
                                    type="radio">
                             <label class="form__button" for="black">
                                 Черный
                             </label>
-                            <input value="gold" name="color" class="form__radio" id="gold"
+                            <input value="Золотой" name="Цвет" class="form__radio" id="gold"
                                    type="radio">
                             <label class="form__button" for="gold">
                                 Золотой
                             </label>
-                            <input value="grey" name="color" class="form__radio" id="grey"
+                            <input value="Серый" name="Цвет" class="form__radio" id="grey"
                                    type="radio">
                             <label class="form__button" for="grey">
                                 Серый
                             </label>
-                            <input value="green" name="color" class="form__radio"
+                            <input value="Зеленый" name="Цвет" class="form__radio"
                                    id="green"
                                    type="radio">
                             <label class="form__button" for="green">
                                 Зеленый
                             </label>
-                            <input value="blue" name="color" class="form__radio" id="blue"
+                            <input value="Голубой" name="Цвет" class="form__radio" id="blue"
                                    type="radio">
                             <label class="form__button" for="blue">
                                 Голубой
                             </label>
-                            <input value="red" name="color" class="form__radio" id="red"
+                            <input value="Красный" name="Цвет" class="form__radio" id="red"
                                    type="radio">
                             <label class="form__button" for="red">
                                 Красный
@@ -206,23 +208,23 @@
                 <h1 class="form__title">Данные для связи</h1>
                 <div class="form__item">
                     <label for="formName" class="form__label">Введите Имя*</label>
-                    <input id="formName" type="text" name="name" class="form__input">
+                    <input id="formName" type="text" name="Имя" class="form__input _req">
                 </div>
                 <div class="form__item">
                     <label for="formEmail" class="form__label">Укажите e-mail*</label>
-                    <input id="formEmail" type="text" name="email"
-                           class="form__input">
+                    <input id="formEmail" type="text" name="Почта"
+                           class="form__input _req _email">
                 </div>
                 <div class="form__item">
                     <label for="formPhoneNumber" class="form__label">Ваш номер телефона*</label>
-                    <input id="formPhoneNumber" type="text" name="phoneNumber"
-                           class="form__input">
+                    <input id="formPhoneNumber" type="text" name="Номер телефона"
+                           class="form__input _req">
                 </div>
                 <div class="form__item">
                     <div class="checkbox">
                         <input id="formAgreement" checked type="checkbox"
-                               name="agreement"
-                               class="checkbox__input">
+                               name="Согласие на обработку данных"
+                               class="checkbox__input _req">
                         <label class="checkbox__label" for="formAgreement">
                                     <span>Я согласен на обработку
                                     <a href="#">персональных данных</a>
@@ -261,14 +263,6 @@
                 <select name="MacbookVersion"
                         class="form_select select_MacbookVersion">
                     <option value="notSelected">(не установлено)</option>
-                    <option value="MacbookPro13">Macbook Pro 13</option>
-                    <option value="MacbookPro14">Macbook Pro 14</option>
-                    <option value="MacbookPro15">Macbook Pro 15</option>
-                    <option value="MacbookPro16">Macbook Pro 16</option>
-                    <option value="MacbookAir13">Macbook Air 13</option>
-                    <option value="MacbookAir11">Macbook Air 11</option>
-                    <option value="MacbookAirM1">Macbook Air M1</option>
-                    <option value="MacbookAirM2">Macbook Air M2</option>
                 </select>
             </div>
 
@@ -857,6 +851,11 @@
 <script src="xiaomi_phones.js"></script>
 <script src="iphones.js"></script>
 <script src="samsung_phones.js"></script>
+<script src="laptops/macbook_laptop.js"></script>
+<script src="tablets/appleIpad_tablets.js"></script>
+<script src="tablets/samsung_tablets.js"></script>
+<script src="watch/apple_watch.js"></script>
+<script src="watch/samsung_watch.js"></script>
 <script src="index.js"></script>
 </body>
 </html>
