@@ -100,6 +100,59 @@ window.addEventListener("load", () => {
     return !/^\w+([\-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
   }
 
+  function isNumber(n){
+    return !isNaN(parseFloat(n)) && isFinite(n)
+  }
+
+  function loadFile(){
+    const req = new XMLHttpRequest();
+    req.open('GET','./iphones.xlsx', true);
+    req.responseType = 'arraybuffer';
+    req.onload = function(e){
+      const workBook = XLSX.read(req.response, {type: 'array'})
+      const allSheetsRows = Object.keys(workBook.Sheets).map((sheet) => {
+        return {
+          sheet: sheet,
+          rows: sheet2arr(workBook.Sheets[sheet])
+              .filter(row => row[1] && isNumber(row[1]))
+              .map(row => {
+                row[1] = +row[1]
+                return row
+              })
+        }
+      })
+      // setSheets(allSheetsRows)
+      console.log(allSheetsRows);
+    }
+    req.send();
+  }
+
+  function sheet2arr(sheet){
+    const result = []
+    let row;
+    let rowNum;
+    let colNum;
+    const range = XLSX.utils.decode_range(sheet['!ref']);
+    for (rowNum = range.s.r; rowNum <= range.e.r; rowNum++){
+      row= [];
+      for (colNum = range.s.c; colNum <= range.e.r; colNum++){
+        const nextCell = sheet[
+            XLSX.utils.encode_cell({r: rowNum, c: colNum})
+            ];
+        if (typeof nextCell === 'undefined'){
+          row.push(void 0);
+        } else {
+          row.push(nextCell.w)
+        }
+      }
+      result.push(row)
+    }
+    return result
+  }
+
+
+  loadFile()
+
 
   const nameBlock = document.querySelector("#name_block");
   const selectPhoneModelBlock = document.querySelector("#selectPhoneModelBlock");
