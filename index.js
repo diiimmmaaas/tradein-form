@@ -1,17 +1,17 @@
 window.addEventListener("load", () => {
   let wrapper = document.querySelector(".wrapper");
   let formSmartphones = document.getElementById("form_smartphones");
-  formSmartphones.addEventListener("submit",(e) => formSend(e, formSmartphones));
+  formSmartphones.addEventListener("submit", (e) => formSend(e, formSmartphones));
 
   async function formSend(e, form) {
     e.preventDefault();
 
     let error = formValidate(form);
     let formData = new FormData(form);
-    if (error   === 0){
-      const resultObj = {}
+    if (error === 0) {
+      const resultObj = {};
       for (var pair of formData.entries()) {
-          resultObj[pair[0]] = pair[1]
+        resultObj[pair[0]] = pair[1];
       }
       console.log(resultObj);
 
@@ -32,7 +32,7 @@ window.addEventListener("load", () => {
       //   wrapper.classList.remove('_sending')
       // }
     } else {
-      alert('Заполните обязательные поля')
+      alert("Заполните обязательные поля");
     }
   }
 
@@ -43,23 +43,23 @@ window.addEventListener("load", () => {
     for (let i = 0; i < formReq.length; i++) {
       const element = formReq[i];
       formRemoveError(element);
-      formRemoveErrorParentElement(element)
+      formRemoveErrorParentElement(element);
 
       if (element.classList.contains("_email")) {
         if (emailTest(element)) {
           formAddError(element);
           error++;
         }
-      } else if (element.getAttribute("type") === 'checkbox' && element.checked === false){
+      } else if (element.getAttribute("type") === "checkbox" && element.checked === false) {
         formAddError(element);
         formAddErrorParentElement(element);
         error++;
       } else {
-        if (element.value === ''){
+        if (element.value === "") {
           formAddError(element);
           error++;
         }
-        if (element.value === 'notSelected'){
+        if (element.value === "notSelected") {
           formAddError(element);
           error++;
         }
@@ -120,15 +120,16 @@ window.addEventListener("load", () => {
     if (userChooseMacbookModel === "Apple") {
       selectMacbookVersionDiv.classList.remove("noDisplay");
       selectNotebookContainer.classList.add("noDisplay");
-      createSmartphoneSelect(selectMacbookVersionDiv, selectMacbookVersion, macbook_laptop)
+      createSmartphoneSelect(selectMacbookVersionDiv, selectMacbookVersion, macbook_laptop);
     } else if (userChooseMacbookModel === "Другой производитель") {
       selectMacbookVersionDiv.classList.add("noDisplay");
       selectNotebookContainer.classList.remove("noDisplay");
-      document.querySelector(".selectMacbookYear").classList.add("noDisplay"); //добавление ноудисплей у года ноута
-    } else if(userChooseMacbookModel === "(не установлено)"){
+      macBookYearBlock.classList.add("noDisplay"); //добавление ноудисплей у года ноута
+    } else if (userChooseMacbookModel === "(не установлено)") {
       selectMacbookVersionDiv.classList.add("noDisplay");
       selectNotebookContainer.classList.add("noDisplay");
       macBookYearBlock.classList.add("noDisplay");
+      selectDeviceConfigContainer.classList.add("noDisplay");
     }
   }
 
@@ -145,30 +146,45 @@ window.addEventListener("load", () => {
 
   let selectAppleWatchVersion = document.querySelector(".selectAppleWatchVersion");
   let selectSamsungWatchVersion = document.querySelector(".selectSamsungWatchVersion");
+  let selectAppleWatch = document.querySelector(".select_AppleWatchVersion");
+  let selectSamsungWatch = document.querySelector(".select_SamsungWatchVersion");
 
   function changeWatchModel() {
     let userChooseWatchVersion = selectWatchDeveloperModel.options[selectWatchDeveloperModel.selectedIndex].text;
     if (userChooseWatchVersion === "Apple") {
       selectAppleWatchVersion.classList.remove("noDisplay");
       selectSamsungWatchVersion.classList.add("noDisplay");
-    } else {
+      createSmartphoneSelect(selectAppleWatchVersion, selectAppleWatch, apple_watch);
+    } else if (userChooseWatchVersion === "Samsung") {
       selectAppleWatchVersion.classList.add("noDisplay");
       selectSamsungWatchVersion.classList.remove("noDisplay");
+      createSmartphoneSelect(selectSamsungWatchVersion, selectSamsungWatch, samsung_watch);
+    } else if (userChooseWatchVersion === "(не установлено)") {
+      selectAppleWatchVersion.classList.add("noDisplay");
+      selectSamsungWatchVersion.classList.add("noDisplay");
+      selectDeviceConfigContainer.classList.add("noDisplay");
     }
   }
 
   let selectLaptopDeveloperModel = document.querySelector(".select_laptopDeveloperModel");
   let selectAppleIpadVersion = document.querySelector(".selectAppleIpadVersion");
   let selectSamsungLaptopVersion = document.querySelector(".selectSamsungLaptopVersion");
+  let selectAppleIpad = document.querySelector(".select_AppleIpadVersion");
+  let selectSamsungLaptop = document.querySelector(".select_SamsungLaptopVersion");
 
   function changeLaptopModel() {
     let userChooseLaptopVersion = selectLaptopDeveloperModel.options[selectLaptopDeveloperModel.selectedIndex].text;
     if (userChooseLaptopVersion === "Apple") {
       selectAppleIpadVersion.classList.remove("noDisplay");
       selectSamsungLaptopVersion.classList.add("noDisplay");
-    } else {
+      createSmartphoneSelect(selectAppleIpadVersion, selectAppleIpad, appleIpad_tablets )
+    } else if (userChooseLaptopVersion === "Samsung") {
       selectAppleIpadVersion.classList.add("noDisplay");
       selectSamsungLaptopVersion.classList.remove("noDisplay");
+      createSmartphoneSelect(selectSamsungLaptopVersion, selectSamsungLaptop, samsung_tablets )
+    } else if (userChooseLaptopVersion === "(не установлено)"){
+      selectAppleIpadVersion.classList.add("noDisplay");
+      selectSamsungLaptopVersion.classList.add("noDisplay");
     }
   }
 
@@ -217,29 +233,29 @@ window.addEventListener("load", () => {
 
     switch (currentValue) {
       case "(не установлено)":
-        selectPhoneModelBlock.classList.add("noDisplay");
         selectDeviceConfigContainer.classList.add("noDisplay");
         nameBlock.classList.add("noDisplay");
         selectOtherPhone.classList.add("noDisplay");
+        selectPhoneModelBlock.classList.add("noDisplay");
         break;
       case "Apple":
-        createSmartphoneSelect(selectPhoneModelBlock,selectPhoneModel, iphones);
+        createSmartphoneSelect(selectPhoneModelBlock, selectPhoneModel, iphones);
         selectOtherPhone.classList.add("noDisplay");
         break;
       case "Samsung":
-        createSmartphoneSelect(selectPhoneModelBlock,selectPhoneModel, samsung_phones);
+        createSmartphoneSelect(selectPhoneModelBlock, selectPhoneModel, samsung_phones);
         selectOtherPhone.classList.add("noDisplay");
         break;
       case "Xiaomi":
-        createSmartphoneSelect(selectPhoneModelBlock,selectPhoneModel, xiaomi_phones);
+        createSmartphoneSelect(selectPhoneModelBlock, selectPhoneModel, xiaomi_phones);
         selectOtherPhone.classList.add("noDisplay");
         break;
       case "Huawei":
-        createSmartphoneSelect(selectPhoneModelBlock,selectPhoneModel, huawei_phones);
+        createSmartphoneSelect(selectPhoneModelBlock, selectPhoneModel, huawei_phones);
         selectOtherPhone.classList.add("noDisplay");
         break;
       case "OnePlus":
-        createSmartphoneSelect(selectPhoneModelBlock,selectPhoneModel, oneplus_phones);
+        createSmartphoneSelect(selectPhoneModelBlock, selectPhoneModel, oneplus_phones);
         selectOtherPhone.classList.add("noDisplay");
         break;
       case "Другое":
@@ -249,7 +265,7 @@ window.addEventListener("load", () => {
     }
   });
 
-  function createSmartphoneSelect(blockSelector, select,object) {
+  function createSmartphoneSelect(blockSelector, select, object) {
     blockSelector.classList.remove("noDisplay");
     removeAllChildNodes(select);
     for (const key in object) {
