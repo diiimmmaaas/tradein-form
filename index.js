@@ -1,12 +1,24 @@
 window.addEventListener("load", () => {
   let wrapper = document.querySelector(".wrapper");
-  let formSmartphones = document.getElementById("form_smartphones");
-  formSmartphones.addEventListener("submit", (e) => formSend(e, formSmartphones));
+  let formSmartphone = document.getElementById("form_smartphones");
+  let formNotebook = document.getElementById("form_notebook");
+  let formWatch = document.getElementById("form_watch");
+  let formLaptop = document.getElementById("form_tablet");
 
-  async function formSend(e, form) {
+  let formReqSmartphone = document.querySelectorAll("._req_smartphone");
+  let formReqNotebook = document.querySelectorAll("._req_notebook");
+  let formReqWatch = document.querySelectorAll("._req_watch");
+  let formReqTablet = document.querySelectorAll("._req_tablet");
+
+  formSmartphone.addEventListener("submit", (e) => formSend(e, formSmartphone, formReqSmartphone));
+  formNotebook.addEventListener("submit", (e) => formSend(e, formNotebook, formReqNotebook));
+  formWatch.addEventListener("submit", (e) => formSend(e, formWatch, formReqWatch));
+  formLaptop.addEventListener("submit", (e) => formSend(e, formLaptop, formReqTablet));
+
+  async function formSend(e, form, formReq) {
     e.preventDefault();
 
-    let error = formValidate(form);
+    let error = formValidate(formReq);
     let formData = new FormData(form);
     if (error === 0) {
       const resultObj = {};
@@ -36,9 +48,9 @@ window.addEventListener("load", () => {
     }
   }
 
-  function formValidate(form) {
+  function formValidate(formReq) {
     let error = 0;
-    let formReq = document.querySelectorAll("._req");
+
 
     for (let i = 0; i < formReq.length; i++) {
       const element = formReq[i];
@@ -193,12 +205,6 @@ window.addEventListener("load", () => {
 
   selectWatchDeveloperModel.addEventListener("change", changeWatchModel);
   selectLaptopDeveloperModel.addEventListener("change", changeLaptopModel);
-
-
-  let formNotebook = document.querySelector(".form_notebook");
-  let formWatch = document.querySelector(".form_watch");
-  let formLaptop = document.querySelector(".form_tablet");
-  let formSmartphone = document.querySelector(".form_smartphones");
 
   smartphonesCategory.addEventListener("click", () => {
     formNotebook.classList.add("noDisplay");
