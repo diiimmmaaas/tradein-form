@@ -135,7 +135,7 @@ window.addEventListener("load", () => {
     const range = XLSX.utils.decode_range(sheet['!ref']);
     for (rowNum = range.s.r; rowNum <= range.e.r; rowNum++){
       row= [];
-      for (colNum = range.s.c; colNum <= range.e.r; colNum++){
+      for (colNum = range.s.c; colNum <= range.e.c; colNum++){
         const nextCell = sheet[
             XLSX.utils.encode_cell({r: rowNum, c: colNum})
             ];
