@@ -294,23 +294,23 @@ window.addEventListener("load", () => {
         selectPhoneModelBlock.classList.add("noDisplay");
         break;
       case "Apple":
-        loadFile("Iphones", './phones.xlsx')
+        loadFile("Iphones", './phones.xlsx', selectPhoneModelBlock, selectPhoneModel)
         selectOtherPhone.classList.add("noDisplay");
         break;
       case "Samsung":
-        loadFile("Samsung_phones", './phones.xlsx')
+        loadFile("Samsung_phones", './phones.xlsx', selectPhoneModelBlock, selectPhoneModel)
         selectOtherPhone.classList.add("noDisplay");
         break;
       case "Xiaomi":
-        loadFile("Xiaomi_phones", './phones.xlsx')
+        loadFile("Xiaomi_phones", './phones.xlsx', selectPhoneModelBlock, selectPhoneModel)
         selectOtherPhone.classList.add("noDisplay");
         break;
       case "Huawei":
-        loadFile("Huawei_phones", './phones.xlsx')
+        loadFile("Huawei_phones", './phones.xlsx', selectPhoneModelBlock, selectPhoneModel)
         selectOtherPhone.classList.add("noDisplay");
         break;
       case "OnePlus":
-        loadFile("OnePlus_phones",'./phones.xlsx')
+        loadFile("OnePlus_phones",'./phones.xlsx', selectPhoneModelBlock, selectPhoneModel)
         selectOtherPhone.classList.add("noDisplay");
         break;
       case "Другое":
@@ -323,12 +323,6 @@ window.addEventListener("load", () => {
   function createSmartphoneSelect(blockSelector, select, object) {
     blockSelector.classList.remove("noDisplay");
     removeAllChildNodes(select);
-    // for (const key in object) {
-    //   const option = document.createElement("option");
-    //   option.classList.add("select_devices__option");
-    //   option.innerText = `${object[key].value}`;
-    //   select.appendChild(option);
-    // }
     if (object){
       object.forEach(obj => obj.forEach(o => {
         const option = document.createElement("option");
@@ -345,44 +339,44 @@ window.addEventListener("load", () => {
 // ЭТО ФУНКЦИЯ ДЛЯ РАБОТЫ ПАМЯТИ!!!
 const values = [16, 32, 64, 128, 256, 512, 1000];
 
-function renderMemorySmartphone() {
-  if (values[this.value] < 1000) {
-    outputMemorySmartphone.innerHTML = values[this.value] + " GB";
-  } else {
-    outputMemorySmartphone.innerHTML = 1 + " TB";
-  }
-}
-
-function renderMemoryLaptop() {
-  if (values[this.value] < 1000) {
-    outputMemoryLaptop.innerHTML = values[this.value] + " GB";
-  } else {
-    outputMemoryLaptop.innerHTML = 1 + " TB";
-  }
-}
-
-function renderMemoryTablet() {
-  if (values[this.value] < 1000) {
-    outputMemoryTablet.innerHTML = values[this.value] + " GB";
-  } else {
-    outputMemoryTablet.innerHTML = 1 + " TB";
-  }
-}
-
-const inputMemorySmartphone = document.querySelector(".inputMemorySmartphone"),
-    outputMemorySmartphone = document.querySelector(".outputMemorySmartphone");
-
-const inputMemoryLaptop = document.querySelector(".inputMemoryLaptop"),
-    outputMemoryLaptop = document.querySelector(".outputMemoryLaptop");
-
-const inputMemoryTablet = document.querySelector(".inputMemoryTablet"),
-    outputMemoryTablet = document.querySelector(".outputMemoryTablet");
-
-inputMemorySmartphone.oninput = renderMemorySmartphone;
-inputMemorySmartphone.oninput();
-
-inputMemoryLaptop.oninput = renderMemoryLaptop;
-inputMemoryLaptop.oninput();
-
-inputMemoryTablet.oninput = renderMemoryTablet;
-inputMemoryTablet.oninput();
+// function renderMemorySmartphone() {
+//   if (values[this.value] < 1000) {
+//     outputMemorySmartphone.innerHTML = values[this.value] + " GB";
+//   } else {
+//     outputMemorySmartphone.innerHTML = 1 + " TB";
+//   }
+// }
+//
+// function renderMemoryLaptop() {
+//   if (values[this.value] < 1000) {
+//     outputMemoryLaptop.innerHTML = values[this.value] + " GB";
+//   } else {
+//     outputMemoryLaptop.innerHTML = 1 + " TB";
+//   }
+// }
+//
+// function renderMemoryTablet() {
+//   if (values[this.value] < 1000) {
+//     outputMemoryTablet.innerHTML = values[this.value] + " GB";
+//   } else {
+//     outputMemoryTablet.innerHTML = 1 + " TB";
+//   }
+// }
+//
+// const inputMemorySmartphone = document.querySelector(".inputMemorySmartphone"),
+//     outputMemorySmartphone = document.querySelector(".outputMemorySmartphone");
+//
+// const inputMemoryLaptop = document.querySelector(".inputMemoryLaptop"),
+//     outputMemoryLaptop = document.querySelector(".outputMemoryLaptop");
+//
+// const inputMemoryTablet = document.querySelector(".inputMemoryTablet"),
+//     outputMemoryTablet = document.querySelector(".outputMemoryTablet");
+//
+// inputMemorySmartphone.oninput = renderMemorySmartphone;
+// inputMemorySmartphone.oninput();
+//
+// inputMemoryLaptop.oninput = renderMemoryLaptop;
+// inputMemoryLaptop.oninput();
+//
+// inputMemoryTablet.oninput = renderMemoryTablet;
+// inputMemoryTablet.oninput();
