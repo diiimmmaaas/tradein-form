@@ -1,4 +1,42 @@
 window.addEventListener("load", () => {
+
+  (function() {
+    [].forEach.call( document.querySelectorAll('.tel'), function(input) {
+      var keyCode;
+      function mask(event) {
+        event.keyCode && (keyCode = event.keyCode);
+        var pos = this.selectionStart;
+        if (pos < 3) event.preventDefault();
+        var matrix = "+7 (___) ___ ____",
+            i = 0,
+            def = matrix.replace(/\D/g, ""),
+            val = this.value.replace(/\D/g, ""),
+            new_value = matrix.replace(/[_\d]/g, function(a) {
+              return i < val.length ? val.charAt(i++) || def.charAt(i) : a
+            });
+        i = new_value.indexOf("_");
+        if (i != -1) {
+          i < 5 && (i = 3);
+          new_value = new_value.slice(0, i)
+        }
+        var reg = matrix.substr(0, this.value.length).replace(/_+/g,
+            function(a) {
+              return "\\d{1," + a.length + "}"
+            }).replace(/[+()]/g, "\\$&");
+        reg = new RegExp("^" + reg + "$");
+        if (!reg.test(this.value) || this.value.length < 5 || keyCode > 47 && keyCode < 58) this.value = new_value;
+        if (event.type == "blur" && this.value.length < 5)  this.value = ""
+      }
+
+      input.addEventListener("input", mask, false);
+      input.addEventListener("focus", mask, false);
+      input.addEventListener("blur", mask, false);
+      input.addEventListener("keydown", mask, false)
+
+    });
+
+  })()
+
   let wrapper = document.querySelector(".wrapper");
   let formSmartphone = document.getElementById("form_smartphones");
   let formNotebook = document.getElementById("form_notebook");
@@ -98,7 +136,7 @@ window.addEventListener("load", () => {
   }
 
   function emailTest(input) {
-    return !/^\w+([\-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
+    return !/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g.test(input.value);
   }
 
   function isNumber(n){
@@ -341,4 +379,5 @@ window.addEventListener("load", () => {
     selectDeviceConfigContainer.classList.remove("noDisplay");
     nameBlock.classList.remove("noDisplay");
   }
+
 });
