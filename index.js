@@ -64,24 +64,23 @@ window.addEventListener("load", () => {
         resultObj[pair[0]] = pair[1];
       }
       console.log(resultObj);
-      form.reset()
-
+      debugger
 
       // wrapper.classList.add('_sending')
-      //
-      // let response = await fetch('sendmail.php', {
-      //   method: 'POST',
-      //   body: formData
-      // })
-      // if (response.ok){
-      //   let result = await response.json()
-      //   alert(result.message)
-      //   formSmartphones.reset()
-      //   wrapper.classList.remove('_sending')
-      // } else {
-      //   alert("Ошибка")
-      //   wrapper.classList.remove('_sending')
-      // }
+
+      let response = await fetch('sender.php', {
+        method: 'POST',
+        body: formData
+      })
+      if (response.ok){
+        let result = await response.json()
+        alert(result.message)
+        form.reset()
+        // wrapper.classList.remove('_sending')
+      } else {
+        alert("Ошибка")
+        // wrapper.classList.remove('_sending')
+      }
     } else {
       alert("Заполните обязательные поля");
     }

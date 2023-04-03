@@ -49,7 +49,9 @@
             </div>
         </div>
 
-        <form action="#" class="form__body noDisplay form_smartphones" id="form_smartphones">
+        <form action="#" method="POST"
+              class="form__body noDisplay form_smartphones"
+              id="form_smartphones">
             <div class="content" id="content">
 
                 <!--БЛОК ДЛЯ ВЫБОРА ПРОИЗВОДИТЕЛЯ СМАРТФОНА!!!-->
@@ -238,17 +240,18 @@
                 <h1 class="form__title">Данные для связи</h1>
                 <div class="form__item">
                     <label for="formName" class="form__label">Введите Имя*</label>
-                    <input id="formName" type="text" name="Имя" class="form__input _req_smartphone">
+                    <input id="formName" type="text" name="name"
+                           class="form__input _req_smartphone">
                 </div>
                 <div class="form__item">
                     <label for="formEmail" class="form__label">Укажите e-mail*</label>
-                    <input id="formEmail" type="text" name="Почта"
+                    <input id="formEmail" type="text" name="email"
                            class="form__input _req_smartphone _email">
                 </div>
                 <div class="form__item">
                     <label for="formPhoneNumber" class="form__label">Ваш номер
                         телефона*</label>
-                    <input id="formPhoneNumber" type="text" name="Номер телефона"
+                    <input id="formPhoneNumber" type="text" name="phone"
                            class="form__input _req_smartphone tel" placeholder="+7"
                            value="">
                 </div>
