@@ -75,7 +75,7 @@
                         модель
                         смартфона *</label>
                     <select name="Модель смартфона" id="select_model"
-                            class="form_select _req_smartphone">
+                            class="form_select">
                         <option value="notSelected">(не установлено)</option>
                     </select>
                 </div>
@@ -88,17 +88,47 @@
                 </div>
 
                 <div class="selectDeviceConfigContainer">
-<!--                    <div class="form__item">-->
-<!--                        <h2 class="form__label">Объем памяти</h2>-->
-<!--                        &lt;!&ndash;                    ПОЛЗУНОК ПАМЯТИ!&ndash;&gt;-->
-<!--                        <div class="form__inputRange">-->
-<!--                            <input id="memory_smartphone" name="Количество памяти"-->
-<!--                                   class="inputMemorySmartphone"-->
-<!--                                    type="range" min="0"-->
-<!--                                   value="0" max="6" step="1">-->
-<!--                            <label for="memory_smartphone" class="outputMemorySmartphone"></label>-->
-<!--                        </div>-->
-<!--                    </div>-->
+                    <div class="form__item">
+                        <h2 class="form__label">Объем памяти</h2>
+                        <div class="form__buttons">
+                            <input value="32Гб" name="Объем памяти" class="form__radio"
+                                   id="32Gb"
+                                   type="radio">
+                            <label class="form__button" for="32Gb">
+                                32Гб
+                            </label>
+                            <input value="64Гб" name="Объем памяти" class="form__radio"
+                                   id="64Gb"
+                                   type="radio">
+                            <label class="form__button" for="64Gb">
+                                64Гб
+                            </label>
+                            <input value="128Гб" name="Объем памяти" class="form__radio"
+                                   id="128Gb"
+                                   type="radio">
+                            <label class="form__button" for="128Gb">
+                                128Гб
+                            </label>
+                            <input value="256Гб" name="Объем памяти" class="form__radio"
+                                   id="256Gb"
+                                   type="radio">
+                            <label class="form__button" for="256Gb">
+                                256Гб
+                            </label>
+                            <input value="512Гб" name="Объем памяти" class="form__radio"
+                                   id="512Gb"
+                                   type="radio">
+                            <label class="form__button" for="512Gb">
+                                512Гб
+                            </label>
+                            <input value="1Тб" name="Объем памяти" class="form__radio"
+                                   id="1Tb"
+                                   type="radio">
+                            <label class="form__button" for="1Tb">
+                                1Тб
+                            </label>
+                        </div>
+                    </div>
                     <div class="form__item">
                         <h2 class="form__label">Состояние</h2>
                         <div class="form__buttons form_bigButtons">
@@ -253,13 +283,13 @@
                 <label class="form__label">Введите
                     название Вашего ноутбука</label>
                 <input class="form__input select_notebookModel" type="text"
-                       name="Модель ноутбука">
+                       name="Другая модель ноутбука">
             </div>
 
             <div class="form__item noDisplay selectMacbookVersion">
                 <label class="form__label">Ваша модель
                     ноутбука *</label>
-                <select name="Другая модель ноутбука"
+                <select name="Модель ноутбука"
                         class="form_select select_MacbookVersion">
                     <option value="notSelected">(не установлено)</option>
                 </select>
@@ -475,7 +505,53 @@
             </div>
 
             <div class="selectDeviceConfigContainer">
-
+                <div class="form__item selectSizeWatch noDisplay">
+                    <h2 class="form__label">Размер дисплея</h2>
+                    <div class="form__buttons">
+                        <input id="38mm" value="38mm" name="Размер дисплея"
+                               class="form__radio warranty"
+                               type="radio">
+                        <label for="38mm" class="form__button">
+                            38mm
+                        </label>
+                        <input id="40mm" value="40mm" name="Размер дисплея"
+                               class="form__radio warranty"
+                               type="radio">
+                        <label for="40mm" class="form__button">
+                            40mm
+                        </label>
+                        <input id="41mm" value="41mm" name="Размер дисплея"
+                               class="form__radio warranty"
+                               type="radio">
+                        <label for="41mm" class="form__button">
+                            41mm
+                        </label>
+                        <input id="42mm" value="42mm" name="Размер дисплея"
+                               class="form__radio warranty"
+                               type="radio">
+                        <label for="42mm" class="form__button">
+                            42mm
+                        </label>
+                        <input id="44mm" value="44mm" name="Размер дисплея"
+                               class="form__radio warranty"
+                               type="radio">
+                        <label for="44mm" class="form__button">
+                            44mm
+                        </label>
+                        <input id="45mm" value="45mm" name="Размер дисплея"
+                               class="form__radio warranty"
+                               type="radio">
+                        <label for="45mm" class="form__button">
+                            45mm
+                        </label>
+                        <input id="49mm" value="49mm" name="Размер дисплея"
+                               class="form__radio warranty"
+                               type="radio">
+                        <label for="49mm" class="form__button">
+                            49mm
+                        </label>
+                    </div>
+                </div>
                 <div class="form__item">
                     <h2 class="form__label">Состояние</h2>
                     <div class="form__buttons form_bigButtons">
@@ -650,18 +726,47 @@
             </div>
 
             <div class="selectDeviceConfigContainer">
-<!--                <div class="form__item">-->
-<!--                    <h2 class="form__label">Объем памяти</h2>-->
-<!--                    &lt;!&ndash;                    ПОЛЗУНОК ПАМЯТИ!&ndash;&gt;-->
-<!--                    <div class="form__inputRange">-->
-<!--                        <input id="memory_tablet" name="Память"-->
-<!--                               class="inputMemoryTablet" type="range"-->
-<!--                               min="0"-->
-<!--                               value="0" max="6" step="1">-->
-<!--                        <label for="memory_tablet" class="outputMemoryTablet"></label>-->
-<!--                    </div>-->
-<!--                    &lt;!&ndash;                    ПОЛЗУНОК ПАМЯТИ!&ndash;&gt;-->
-<!--                </div>-->
+                <div class="form__item">
+                    <h2 class="form__label">Объем памяти</h2>
+                    <div class="form__buttons">
+                        <input value="32Гб" name="Объем памяти" class="form__radio"
+                               id="32Gb_tablet"
+                               type="radio">
+                        <label class="form__button" for="32Gb_tablet">
+                            32Гб
+                        </label>
+                        <input value="64Гб" name="Объем памяти" class="form__radio"
+                               id="64Gb_tablet"
+                               type="radio">
+                        <label class="form__button" for="64Gb_tablet">
+                            64Гб
+                        </label>
+                        <input value="128Гб" name="Объем памяти" class="form__radio"
+                               id="128Gb_tablet"
+                               type="radio">
+                        <label class="form__button" for="128Gb_tablet">
+                            128Гб
+                        </label>
+                        <input value="256Гб" name="Объем памяти" class="form__radio"
+                               id="256Gb_tablet"
+                               type="radio">
+                        <label class="form__button" for="256Gb_tablet">
+                            256Гб
+                        </label>
+                        <input value="512Гб" name="Объем памяти" class="form__radio"
+                               id="512Gb_tablet"
+                               type="radio">
+                        <label class="form__button" for="512Gb_tablet">
+                            512Гб
+                        </label>
+                        <input value="1Тб" name="Объем памяти" class="form__radio"
+                               id="1Tb_tablet"
+                               type="radio">
+                        <label class="form__button" for="1Tb_tablet">
+                            1Тб
+                        </label>
+                    </div>
+                </div>
                 <div class="form__item">
                     <h2 class="form__label">Состояние</h2>
                     <div class="form__buttons form_bigButtons">

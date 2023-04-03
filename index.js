@@ -26,6 +26,7 @@ window.addEventListener("load", () => {
         resultObj[pair[0]] = pair[1];
       }
       console.log(resultObj);
+      form.reset()
 
 
       // wrapper.classList.add('_sending')
@@ -183,6 +184,7 @@ window.addEventListener("load", () => {
       selectNotebookContainer.classList.add("noDisplay");
       loadFile('Apple', './notebook.xlsx', selectMacbookVersionDiv, selectMacbookVersion)
     } else if (userChooseMacbookModel === "Другой производитель") {
+      selectMacbookVersion.value = '(не установлено)'
       selectMacbookVersionDiv.classList.add("noDisplay");
       selectNotebookContainer.classList.remove("noDisplay");
       macBookYearBlock.classList.add("noDisplay"); //добавление ноудисплей у года ноута
@@ -209,18 +211,22 @@ window.addEventListener("load", () => {
   let selectSamsungWatchVersion = document.querySelector(".selectSamsungWatchVersion");
   let selectAppleWatch = document.querySelector(".select_AppleWatchVersion");
   let selectSamsungWatch = document.querySelector(".select_SamsungWatchVersion");
+  let selectSizeWatch = document.querySelector(".selectSizeWatch");
 
   function changeWatchModel() {
     let userChooseWatchVersion = selectWatchDeveloperModel.options[selectWatchDeveloperModel.selectedIndex].text;
     if (userChooseWatchVersion === "Apple") {
       selectAppleWatchVersion.classList.remove("noDisplay");
+      selectSizeWatch.classList.remove("noDisplay");
       selectSamsungWatchVersion.classList.add("noDisplay");
       loadFile('Apple', './watch.xlsx',selectAppleWatchVersion,selectAppleWatch)
     } else if (userChooseWatchVersion === "Samsung") {
+      selectSizeWatch.classList.add("noDisplay");
       selectAppleWatchVersion.classList.add("noDisplay");
       selectSamsungWatchVersion.classList.remove("noDisplay");
-      loadFile('Apple', './watch.xlsx',selectSamsungWatchVersion,selectSamsungWatch)
+      loadFile('Samsung', './watch.xlsx',selectSamsungWatchVersion,selectSamsungWatch)
     } else if (userChooseWatchVersion === "(не установлено)") {
+      selectSizeWatch.classList.add("noDisplay");
       selectAppleWatchVersion.classList.add("noDisplay");
       selectSamsungWatchVersion.classList.add("noDisplay");
       selectDeviceConfigContainer.classList.add("noDisplay");
@@ -316,6 +322,7 @@ window.addEventListener("load", () => {
       case "Другое":
         selectPhoneModelBlock.classList.add("noDisplay");
         selectOtherPhone.classList.remove("noDisplay");
+        selectPhoneModel.value = '(не установлено)'
         break;
     }
   });
@@ -335,48 +342,3 @@ window.addEventListener("load", () => {
     nameBlock.classList.remove("noDisplay");
   }
 });
-
-// ЭТО ФУНКЦИЯ ДЛЯ РАБОТЫ ПАМЯТИ!!!
-const values = [16, 32, 64, 128, 256, 512, 1000];
-
-// function renderMemorySmartphone() {
-//   if (values[this.value] < 1000) {
-//     outputMemorySmartphone.innerHTML = values[this.value] + " GB";
-//   } else {
-//     outputMemorySmartphone.innerHTML = 1 + " TB";
-//   }
-// }
-//
-// function renderMemoryLaptop() {
-//   if (values[this.value] < 1000) {
-//     outputMemoryLaptop.innerHTML = values[this.value] + " GB";
-//   } else {
-//     outputMemoryLaptop.innerHTML = 1 + " TB";
-//   }
-// }
-//
-// function renderMemoryTablet() {
-//   if (values[this.value] < 1000) {
-//     outputMemoryTablet.innerHTML = values[this.value] + " GB";
-//   } else {
-//     outputMemoryTablet.innerHTML = 1 + " TB";
-//   }
-// }
-//
-// const inputMemorySmartphone = document.querySelector(".inputMemorySmartphone"),
-//     outputMemorySmartphone = document.querySelector(".outputMemorySmartphone");
-//
-// const inputMemoryLaptop = document.querySelector(".inputMemoryLaptop"),
-//     outputMemoryLaptop = document.querySelector(".outputMemoryLaptop");
-//
-// const inputMemoryTablet = document.querySelector(".inputMemoryTablet"),
-//     outputMemoryTablet = document.querySelector(".outputMemoryTablet");
-//
-// inputMemorySmartphone.oninput = renderMemorySmartphone;
-// inputMemorySmartphone.oninput();
-//
-// inputMemoryLaptop.oninput = renderMemoryLaptop;
-// inputMemoryLaptop.oninput();
-//
-// inputMemoryTablet.oninput = renderMemoryTablet;
-// inputMemoryTablet.oninput();
