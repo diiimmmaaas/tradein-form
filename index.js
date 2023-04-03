@@ -104,9 +104,9 @@ window.addEventListener("load", () => {
     return !isNaN(parseFloat(n)) && isFinite(n)
   }
 
-  function loadFile(){
+  function loadFile(device, tab, selectBlock, selectModel){
     const req = new XMLHttpRequest();
-    req.open('GET','./iphones.xlsx', true);
+    req.open('GET', tab, true);
     req.responseType = 'arraybuffer';
     req.onload = function(e){
       const workBook = XLSX.read(req.response, {type: 'array'})
@@ -121,8 +121,8 @@ window.addEventListener("load", () => {
               })
         }
       })
-      // setSheets(allSheetsRows)
-      console.log(allSheetsRows);
+      const result = allSheetsRows.filter(sheet => sheet.sheet === device).map(s => s.rows)
+      createSmartphoneSelect(selectBlock, selectModel, result);
     }
     req.send();
   }
@@ -149,10 +149,6 @@ window.addEventListener("load", () => {
     }
     return result
   }
-
-
-  loadFile()
-
 
   const nameBlock = document.querySelector("#name_block");
   const selectPhoneModelBlock = document.querySelector("#selectPhoneModelBlock");
@@ -185,7 +181,7 @@ window.addEventListener("load", () => {
     if (userChooseMacbookModel === "Apple") {
       selectMacbookVersionDiv.classList.remove("noDisplay");
       selectNotebookContainer.classList.add("noDisplay");
-      createSmartphoneSelect(selectMacbookVersionDiv, selectMacbookVersion, macbook_laptop);
+      loadFile('Apple', './notebook.xlsx', selectMacbookVersionDiv, selectMacbookVersion)
     } else if (userChooseMacbookModel === "Другой производитель") {
       selectMacbookVersionDiv.classList.add("noDisplay");
       selectNotebookContainer.classList.remove("noDisplay");
@@ -219,11 +215,11 @@ window.addEventListener("load", () => {
     if (userChooseWatchVersion === "Apple") {
       selectAppleWatchVersion.classList.remove("noDisplay");
       selectSamsungWatchVersion.classList.add("noDisplay");
-      createSmartphoneSelect(selectAppleWatchVersion, selectAppleWatch, apple_watch);
+      loadFile('Apple', './watch.xlsx',selectAppleWatchVersion,selectAppleWatch)
     } else if (userChooseWatchVersion === "Samsung") {
       selectAppleWatchVersion.classList.add("noDisplay");
       selectSamsungWatchVersion.classList.remove("noDisplay");
-      createSmartphoneSelect(selectSamsungWatchVersion, selectSamsungWatch, samsung_watch);
+      loadFile('Apple', './watch.xlsx',selectSamsungWatchVersion,selectSamsungWatch)
     } else if (userChooseWatchVersion === "(не установлено)") {
       selectAppleWatchVersion.classList.add("noDisplay");
       selectSamsungWatchVersion.classList.add("noDisplay");
@@ -242,11 +238,11 @@ window.addEventListener("load", () => {
     if (userChooseLaptopVersion === "Apple") {
       selectAppleIpadVersion.classList.remove("noDisplay");
       selectSamsungLaptopVersion.classList.add("noDisplay");
-      createSmartphoneSelect(selectAppleIpadVersion, selectAppleIpad, appleIpad_tablets )
+      loadFile('Apple', './tablet.xlsx', selectAppleIpadVersion, selectAppleIpad)
     } else if (userChooseLaptopVersion === "Samsung") {
       selectAppleIpadVersion.classList.add("noDisplay");
       selectSamsungLaptopVersion.classList.remove("noDisplay");
-      createSmartphoneSelect(selectSamsungLaptopVersion, selectSamsungLaptop, samsung_tablets )
+      loadFile('Samsung', './tablet.xlsx', selectSamsungLaptopVersion, selectSamsungLaptop)
     } else if (userChooseLaptopVersion === "(не установлено)"){
       selectAppleIpadVersion.classList.add("noDisplay");
       selectSamsungLaptopVersion.classList.add("noDisplay");
@@ -298,23 +294,23 @@ window.addEventListener("load", () => {
         selectPhoneModelBlock.classList.add("noDisplay");
         break;
       case "Apple":
-        createSmartphoneSelect(selectPhoneModelBlock, selectPhoneModel, iphones);
+        loadFile("Iphones", './phones.xlsx')
         selectOtherPhone.classList.add("noDisplay");
         break;
       case "Samsung":
-        createSmartphoneSelect(selectPhoneModelBlock, selectPhoneModel, samsung_phones);
+        loadFile("Samsung_phones", './phones.xlsx')
         selectOtherPhone.classList.add("noDisplay");
         break;
       case "Xiaomi":
-        createSmartphoneSelect(selectPhoneModelBlock, selectPhoneModel, xiaomi_phones);
+        loadFile("Xiaomi_phones", './phones.xlsx')
         selectOtherPhone.classList.add("noDisplay");
         break;
       case "Huawei":
-        createSmartphoneSelect(selectPhoneModelBlock, selectPhoneModel, huawei_phones);
+        loadFile("Huawei_phones", './phones.xlsx')
         selectOtherPhone.classList.add("noDisplay");
         break;
       case "OnePlus":
-        createSmartphoneSelect(selectPhoneModelBlock, selectPhoneModel, oneplus_phones);
+        loadFile("OnePlus_phones",'./phones.xlsx')
         selectOtherPhone.classList.add("noDisplay");
         break;
       case "Другое":
@@ -327,11 +323,19 @@ window.addEventListener("load", () => {
   function createSmartphoneSelect(blockSelector, select, object) {
     blockSelector.classList.remove("noDisplay");
     removeAllChildNodes(select);
-    for (const key in object) {
-      const option = document.createElement("option");
-      option.classList.add("select_devices__option");
-      option.innerText = `${object[key].value}`;
-      select.appendChild(option);
+    // for (const key in object) {
+    //   const option = document.createElement("option");
+    //   option.classList.add("select_devices__option");
+    //   option.innerText = `${object[key].value}`;
+    //   select.appendChild(option);
+    // }
+    if (object){
+      object.forEach(obj => obj.forEach(o => {
+        const option = document.createElement("option");
+        option.classList.add("select_devices__option");
+        option.innerText = `${o[0]}`;
+        select.appendChild(option)
+      }))
     }
     selectDeviceConfigContainer.classList.remove("noDisplay");
     nameBlock.classList.remove("noDisplay");
